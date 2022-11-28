@@ -6,7 +6,7 @@
 #    By: jimin <jimin@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 18:08:03 by jimin             #+#    #+#              #
-#    Updated: 2022/11/22 16:58:44 by jimin            ###   ########.fr        #
+#    Updated: 2022/11/28 17:25:43 by jimin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ RM = rm -f
 #HEADER_DIR	= include/
 #HEADER_PATH	= $(addprefix $(HEADER_DIR), $(HEADER_SRCS))
 
-SRCS	= phone_book.cpp
+SRCS	= Contact.cpp PhoneBook.cpp main.cpp
 #PATH_DIR = ./src/
 #PATH	= $(addprefix $(PATH_DIR), $(SRCS))
 
