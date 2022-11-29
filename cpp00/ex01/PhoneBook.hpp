@@ -11,12 +11,13 @@ public:
 	PhoneBook( void );
 	~PhoneBook( void );
 
-	void	AddContact( Contact *contact );
+	void	AddContact( Contact contact );
 	void	SearchContact( void ) const;
+	void	PrintHeader( void ) const;
 
 private:
 
-	Contact	*contact[8];
+	Contact	contact[8];
 	std::size_t	contactCount;	
 };
 

@@ -2,6 +2,9 @@
 #include <iomanip>
 #include "Contact.hpp"
 
+
+Contact::Contact(){};
+
 Contact::Contact( std::string firstName, std::string lastName, 
 		std::string phoneNumber, std::string darkestSecret ) 
 	: firstName( firstName ), lastName( lastName ), 
@@ -21,7 +24,7 @@ Contact::~Contact( void ) {
 
 
 
-void	Contact::PrintContact( void ) {
+void	Contact::PrintContact( void ) const {
 
 	std::cout << "firstName = " << this->firstName << std::endl;
 	std::cout << "lastName = " << this->lastName << std::endl;
@@ -31,7 +34,7 @@ void	Contact::PrintContact( void ) {
 	return;
 }
 
-void	Contact::PrintContactSmall( void ) {
+void	Contact::PrintContactSmall( void ) const {
 
 	std::cout << std::setw(10) << std::right <<  this->firstName << "|";
 	std::cout << std::setw(10) << std::right <<  this->lastName << "|";

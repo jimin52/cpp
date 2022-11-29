@@ -6,13 +6,12 @@
 #    By: jimin <jimin@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 18:08:03 by jimin             #+#    #+#              #
-#    Updated: 2022/11/28 17:25:43 by jimin            ###   ########.fr        #
+#    Updated: 2022/11/29 09:52:52 by jimin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook 
 CXX = c++
-#CPPFLAGS = -I$(HEADER_DIR)
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
@@ -37,7 +36,9 @@ clean :
 fclean : clean
 	$(RM) $(NAME)
 
-re : fclean all
+re : 
+	$(MAKE) fclean 
+	$(MAKE) all
 
 .cpp.o :
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
