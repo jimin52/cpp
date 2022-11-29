@@ -56,15 +56,17 @@ void	PhoneBook::search( void ) {
 void	PhoneBook::SearchContact( void ) const {
 
 	this->PrintHeader();
-	if (this->contactCount < 8) {
+	if (this->contactCount <= 8) {
 		for (size_t i = 0; i < this->contactCount; i++) {
 			std::cout << std::setw(10) << std::to_string(i) << "|";
 			this->contact[i].PrintContactInLine();
 		}
 	}
 	else
-		for (size_t i = 0; i < 8; i++)
+		for (size_t i = 0; i < 8; i++) {
+			std::cout << std::setw(10) << std::to_string(i) << "|";
 			this->contact[i].PrintContactInLine();
+		}
 
 	return;
 }
