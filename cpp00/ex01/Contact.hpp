@@ -1,19 +1,23 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP 
 
-# include <string>
+# include <iostream>
+# include <iomanip>
 
 class Contact {
 
 public:
 
 	Contact();
-	Contact( std::string firstName, std::string lastName,
-			std::string phoneNumber, std::string darkestSecret );
+	Contact( std::string firstName,
+			std::string lastName,
+			std::string phoneNumber,
+			std::string darkestSecret );
 	~Contact( void );
 
 	void	PrintContact( void ) const ;
-	void	PrintContactSmall( void ) const ;
+	void	PrintContactInLine( void ) const ;
+	bool	IsEmpty( void ) const ;
 
 private:
 
