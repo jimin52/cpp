@@ -1,5 +1,3 @@
-#include <iostream>
-#include <iomanip>
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook( void ) {
@@ -18,10 +16,14 @@ PhoneBook::~PhoneBook( void ) {
 }
 
 
-void	PhoneBook::AddContact(Contact contact) {
+void	PhoneBook::AddContact( Contact contact ) {
 
-	this->contact[contactCount % 8] = contact;
-	++this->contactCount;
+	if ( contact.IsEmpty() == true )
+		return;
+	else {
+		this->contact[contactCount % 8] = contact;
+		++this->contactCount;
+	}
 
 	return;
 }
@@ -40,16 +42,19 @@ void	PhoneBook::PrintHeader( void ) const {
 	std::cout << std::setw(10) << std::right <<  "----------" << "-";
 	std::cout << std::setw(10) << std::right <<  "----------" << "-";
 	std::cout << std::setw(10) << std::right <<  "----------" << "-" << std::endl;
+
+	return;
 }
+
 void	PhoneBook::SearchContact( void ) const {
 
 	this->PrintHeader();
 	if (this->contactCount < 8)
 		for (size_t i = 0; i < this->contactCount; i++)
-			this->contact[i].PrintContactSmall();
+			this->contact[i].PrintContactInLine();
 	else
 		for (size_t i = 0; i < 8; i++)
-			this->contact[i].PrintContactSmall();
+			this->contact[i].PrintContactInLine();
 	std::cout << std::endl;
 
 	return;
