@@ -2,16 +2,10 @@
 
 Contact::Contact(){};
 
-Contact::Contact(
-		std::string firstName,
-		std::string lastName, 
-		std::string phoneNumber,
-		std::string darkestSecret 
-		) 
-	: firstName( firstName ),
-	lastName( lastName ), 
-	phoneNumber( phoneNumber ),
-	darkestSecret( darkestSecret ) {
+Contact::Contact( std::string firstName, std::string lastName, std::string nickName, 
+		std::string phoneNumber, std::string darkestSecret ) 
+	: firstName( firstName ), lastName( lastName ), nickName( nickName ),
+	phoneNumber( phoneNumber ), darkestSecret( darkestSecret ) {
 
 		std::cout << "Contact Constructor called" << std::endl;
 
@@ -32,19 +26,31 @@ void	Contact::PrintContact( void ) const {
 
 	std::cout << "firstName = " << this->firstName << std::endl;
 	std::cout << "lastName = " << this->lastName << std::endl;
+	std::cout << "nickName = " << this->nickName << std::endl;
 	std::cout << "phoneNumber = " << this->phoneNumber << std::endl;
 	std::cout << "darkestSecret = " << this->darkestSecret << std::endl;
 
 	return;
 }
 
+std::string	SummaryTenWords(std::string str) {
+	
+	std::string	returnString;
+
+	returnString = str.substr(0,10);
+	if (str.size() > 10) {
+		returnString.replace(9, 1, ".");
+	}
+	return returnString;
+}
+
 void	Contact::PrintContactInLine( void ) const {
 
-	// 10 글자 넘으면 '.' 붙어서 출력하게 변경
-	std::cout << std::setw(10) << std::right <<  this->firstName << "|";
-	std::cout << std::setw(10) << std::right <<  this->lastName << "|";
-	std::cout << std::setw(10) << std::right <<  this->phoneNumber << "|";
-	std::cout << std::setw(10) << std::right <<  this->darkestSecret << std::endl;
+	std::cout << std::setw(10) << std::right <<  SummaryTenWords(this->firstName) << "|";
+	std::cout << std::setw(10) << std::right <<  SummaryTenWords(this->lastName) << "|";
+	std::cout << std::setw(10) << std::right <<  SummaryTenWords(this->nickName) << "|";
+	std::cout << std::setw(10) << std::right <<  SummaryTenWords(this->phoneNumber) << "|";
+	std::cout << std::endl;
 
 	return;
 
@@ -61,4 +67,15 @@ bool	Contact::IsEmpty( void ) const {
 	if ( this->darkestSecret.empty() == 1)
 		return true;
 	return false;
+}
+
+void	Contact::setContact(std::string fName, std::string lName, std::string nName, std::string pNumber, std::string dSecret) {
+
+	firstName = fName;
+	lastName = lName;
+	nickName = nName;
+	phoneNumber = pNumber;
+	darkestSecret = dSecret;
+
+	return;
 }

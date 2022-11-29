@@ -13,9 +13,14 @@ public:
 	PhoneBook( void );
 	~PhoneBook( void );
 
-	void	AddContact( Contact contact );
+	void	add( void );
+	void	search( void );
+	void	exit( void );
+	void	AddContact( void );
 	void	SearchContact( void ) const;
 	void	PrintHeader( void ) const;
+	void	PrintContactWithId( int ) const;
+	Contact	InputToContact( void );
 
 private:
 
