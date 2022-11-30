@@ -1,5 +1,4 @@
 #include "PhoneBook.hpp"
-#include <string>
 
 PhoneBook::PhoneBook( void ) {
 
@@ -109,7 +108,6 @@ Contact	PhoneBook::InputToContact( void )
 	if ( std::cin.fail() ) {
 		std::cout << "WRONG INPUT" << std::endl;
 		std::cin.clear();
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		return Contact();
 	}
 		
