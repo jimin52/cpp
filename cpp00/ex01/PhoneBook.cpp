@@ -106,6 +106,13 @@ Contact	PhoneBook::InputToContact( void )
 		std::cin.clear();
 		return Contact();
 	}
+	if ( std::cin.fail() ) {
+		std::cout << "WRONG INPUT" << std::endl;
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		return Contact();
+	}
+		
 	std::cout << "input your last name: ";
 	if (!std::getline(std::cin, lastName) || lastName == "") {
 		std::cout << "Don't empty input" << std::endl;
