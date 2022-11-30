@@ -6,7 +6,7 @@
 #    By: jimin <jimin@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 18:08:03 by jimin             #+#    #+#              #
-#    Updated: 2022/11/22 16:59:03 by jimin            ###   ########.fr        #
+#    Updated: 2022/11/30 20:04:16 by jimin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,9 @@ clean :
 fclean : clean
 	$(RM) $(NAME)
 
-re : fclean all
+re : 
+	$(MAKE) fclean
+	$(MAKE) all
 
 .cpp.o :
 	@$(CXX) $(CXXFLAGS) -c $< -o $@

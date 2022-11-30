@@ -7,7 +7,7 @@ Contact::Contact( std::string firstName, std::string lastName, std::string nickN
 	: firstName( firstName ), lastName( lastName ), nickName( nickName ),
 	phoneNumber( phoneNumber ), darkestSecret( darkestSecret ) {
 
-		std::cout << "Contact Constructor called" << std::endl;
+//		std::cout << "Contact Constructor called" << std::endl;
 
 		return;
 
@@ -15,7 +15,7 @@ Contact::Contact( std::string firstName, std::string lastName, std::string nickN
 
 Contact::~Contact( void ) {
 	
-	std::cout << "Contact Destructor called" << std::endl;
+//	std::cout << "Contact Destructor called" << std::endl;
 
 	return;
 
