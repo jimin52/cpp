@@ -6,11 +6,11 @@
 #    By: jimin <jimin@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 18:08:03 by jimin             #+#    #+#              #
-#    Updated: 2022/12/05 14:29:22 by jimin            ###   ########.fr        #
+#    Updated: 2022/12/05 15:22:59 by jimin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = main
+NAME = harl 
 CXX = c++ -g3
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
