@@ -2,8 +2,8 @@
 // Created by jimin on 2022/12/02.
 //
 
-#ifndef CPP_WEAPON_H
-#define CPP_WEAPON_H
+#ifndef CPP_WEAPON_HPP
+#define CPP_WEAPON_HPP
 
 # include <iostream>
 
@@ -29,4 +29,4 @@ public:
 };
 
 
-#endif //CPP_WEAPON_H
+#endif //CPP_WEAPON_HPP

@@ -2,22 +2,22 @@
 // Created by jimin on 2022/12/02.
 //
 
-#ifndef CPP_HUMANA_H
-#define CPP_HUMANA_H
+#ifndef CPP_HUMANA_HPP
+#define CPP_HUMANA_HPP
 
 # include <iostream>
-# include "Weapon.h"
+# include "Weapon.hpp"
 
 class HumanA {
 
 private:
 
-	Weapon	&myWeapon;
 	std::string	name;
+	Weapon	&myWeapon;
 
 public:
 	//constructor
-	explicit HumanA(const std::string &name, Weapon &weapon);
+	explicit HumanA(const std::string & name, Weapon & weapon);
 	//destructor
 	virtual ~HumanA();
 
@@ -26,4 +26,4 @@ public:
 };
 
 
-#endif //CPP_HUMANA_H
+#endif //CPP_HUMANA_HPP

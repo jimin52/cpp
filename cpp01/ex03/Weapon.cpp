@@ -2,7 +2,7 @@
 // Created by jimin on 2022/12/02.
 //
 
-#include "Weapon.h"
+#include "Weapon.hpp"
 
 const std::string &Weapon::getType() const {
 	return type;

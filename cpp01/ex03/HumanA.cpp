@@ -2,9 +2,9 @@
 // Created by jimin on 2022/12/02.
 //
 
-#include "HumanA.h"
+#include "HumanA.hpp"
 
-HumanA::HumanA( const std::string &name, Weapon &weapon ) : name( name ), myWeapon( weapon ){
+HumanA::HumanA( const std::string & name, Weapon & weapon ) : name( name ), myWeapon( weapon ) {
 	std::cout << HumanA::name << " constructed" << std::endl;
 }
 

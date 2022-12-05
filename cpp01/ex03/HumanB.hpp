@@ -2,17 +2,17 @@
 // Created by jimin on 2022/12/02.
 //
 
-#ifndef CPP_HUMANB_H
-#define CPP_HUMANB_H
+#ifndef CPP_HUMANB_HPP
+#define CPP_HUMANB_HPP
 
-# include "Weapon.h"
+# include "Weapon.hpp"
 
 class HumanB {
 
 private:
 
-	Weapon	*myWeapon;
 	std::string	name;
+	Weapon	*myWeapon;
 
 public:
 	//constructor
@@ -27,4 +27,4 @@ public:
 };
 
 
-#endif //CPP_HUMANB_H
+#endif //CPP_HUMANB_HPP

@@ -2,9 +2,9 @@
 // Created by jimin on 2022/12/02.
 //
 
-#include "Weapon.h"
-#include "HumanA.h"
-#include "HumanB.h"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main() {
 	{
@@ -24,4 +24,5 @@ int main() {
 			jim.attack();
 		}
 	}
-	return 0; }
+	return 0; 
+}
