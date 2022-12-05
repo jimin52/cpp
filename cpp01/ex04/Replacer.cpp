@@ -47,15 +47,19 @@ void Replacer::ReplaceText() {
 	OpenOutfileStream();
 	while (!infileStream.eof()) {
 		std::getline(infileStream, buffer);
-		replaceBuffer.append(buffer + '\n');
+		if (infileStream.eof())
+			replaceBuffer.append(buffer);
+		else
+			replaceBuffer.append(buffer + '\n');
+		pos = replaceBuffer.find(getFromText(), 0);
+		while (pos < replaceBuffer.length()){
+			replaceBuffer.erase(pos, getFromText().length());
+			replaceBuffer.insert(pos, getToText());
+			pos = replaceBuffer.find(getFromText(), pos + getToText().size());
+		}
+		outfileStream << replaceBuffer;
+		replaceBuffer.clear();
 	}
-	pos = replaceBuffer.find(getFromText(), 0);
-	while (pos < replaceBuffer.length()){
-		replaceBuffer.erase(pos, getFromText().length());
-		replaceBuffer.insert(pos, getToText());
-		pos = replaceBuffer.find(getFromText(), pos + getToText().size());
-	}
-	outfileStream << replaceBuffer;
 	CloseStream();
 }
 

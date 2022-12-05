@@ -12,12 +12,6 @@ int	main( int argc, char* argv[]) {
 			throw MyException("Invalid Argument");
 		} else {
 			Replacer replacer(argv[1], argv[2], argv[3]);
-
-			std::cout << "InfileName: " << replacer.getInfileName() << std::endl;
-			std::cout << "OutfileName: " << replacer.getOutfileName() << std::endl;
-
-			std::cout << "from text: " << replacer.getFromText() << std::endl;
-			std::cout << "to text: " << replacer.getToText() << std::endl;
 			replacer.ReplaceText();
 		}
 	} catch (MyException e) {
@@ -25,6 +19,5 @@ int	main( int argc, char* argv[]) {
 	} catch (std::exception e){
 		std::cerr << e.what() << std::endl;
 	}
-
 	return 0;
 }
