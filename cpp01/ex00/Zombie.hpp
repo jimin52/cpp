@@ -2,8 +2,8 @@
 // Created by jimin on 2022/12/02.
 //
 
-#ifndef CPP_ZOMBIE_H
-#define CPP_ZOMBIE_H
+#ifndef CPP_ZOMBIE_HPP
+#define CPP_ZOMBIE_HPP
 
 #include <iostream>
 
@@ -25,4 +25,4 @@ private:
 Zombie*	newZombie(std::string name);
 void randomChump(std::string name);
 
-#endif //CPP_ZOMBIE_H
+#endif //CPP_ZOMBIE_HPP

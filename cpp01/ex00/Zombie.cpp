@@ -2,7 +2,7 @@
 // Created by jimin on 2022/12/02.
 //
 
-#include "Zombie.h"
+#include "Zombie.hpp"
 
 Zombie::Zombie( std::string name ) : name(name) {
 	std::cout << this->name << " is constructed" << std::endl;

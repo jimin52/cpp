@@ -1,4 +1,4 @@
-#include "Zombie.h"
+#include "Zombie.hpp"
 
 int main() {
 
@@ -7,6 +7,8 @@ int main() {
 	zombie1 = newZombie("zomzomzom");
 	zombie1->Announce();
 	randomChump("zombiezombie");
+
+	delete zombie1;
 
 	return 0;
 }
