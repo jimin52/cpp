@@ -5,6 +5,10 @@
 #include "Harl.hpp"
 
 Harl::Harl() {
+	level[0] = "DEBUG";
+	level[1] = "INFO";
+	level[2] = "WARNING";
+	level[3] = "ERROR";
 	std::cout << "Harl constructed" << std::endl;
 }
 
@@ -33,36 +37,21 @@ void Harl::error(){
 
 };
 
+int	Harl::get_level(std::string input) {
+	for (int i = 0; i < 4; i++) {
+		if (level[i] == input)
+			return i;
+	}
+	return -1;
+}
+
 void Harl::complain(std::string input) {
 	static void (Harl::*func[5]) (void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
-	switch (input.front()) {
-		case 'D':
-			if (input == "DEBUG")
-				(this->*func[0])();
-			else
-				std::cerr << "Invalid Command" << std::endl;
-			break;
-		case 'I':
-			if (input == "INFO")
-				(this->*func[1])();
-			else
-				std::cerr << "Invalid Command" << std::endl;
-			break;
-		case 'W':
-			if (input == "WARNING")
-				(this->*func[2])();
-			else
-				std::cerr << "Invalid Command" << std::endl;
-			break;
-		case 'E':
-			if (input == "ERROR")
-				(this->*func[3])();
-			else
-				std::cerr << "Invalid Command" << std::endl;
-			break;
-		default:
-			std::cerr << "Invalid Command" << std::endl;
-			break;
-	}
+	int inputLevel;
+	inputLevel = get_level(input);
+	if (inputLevel == -1)
+		std::cerr << "Invalid Command" << std::endl;
+	else
+		(this->*func[inputLevel])();
 }

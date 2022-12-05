@@ -16,7 +16,11 @@ public:
 	void	warning();
 	void	error();
 	void	complain(std::string input);
+	int		get_level(std::string input);
 
+private:
+	std::string	level[4];
 };
+
 
 #endif //CPP_HARL_HPP
