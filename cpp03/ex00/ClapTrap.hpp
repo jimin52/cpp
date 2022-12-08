@@ -25,6 +25,7 @@ private:
 
 public:
 	//	orthodox canonical form
+	ClapTrap();
 	explicit ClapTrap(const std::string &name);
 	virtual ~ClapTrap();
 	ClapTrap(ClapTrap const & src);

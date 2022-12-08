@@ -7,12 +7,17 @@
 /*********************************************/
 /******		orthodox canonical form		******/
 /*********************************************/
+
+ClapTrap::ClapTrap() : name(""), hitPoint(0), energyPoint(0), attackDamange(0) {
+	std::cout << "ClapTrap default constructor called" << std::endl;
+}
+
 ClapTrap::ClapTrap(const std::string &name) : name(name), hitPoint(10), energyPoint(10), attackDamange(0) {
-	std::cout << "Claptrap " << getName() << " constructed" << std::endl;
+	std::cout << "Claptrap " << getName() << " constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Claptrap " << getName() << " destructed" << std::endl;
+	std::cout << "Claptrap " << getName() << " destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &src) {
@@ -119,3 +124,4 @@ unsigned int ClapTrap::getSafeDamageInput(unsigned int amount) {
 		damage = amount;
 	return damage;
 }
+
