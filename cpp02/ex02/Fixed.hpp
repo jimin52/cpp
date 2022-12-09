@@ -17,11 +17,9 @@ private:
 
 public:
 	Fixed();
-	explicit Fixed( int src );
-	explicit Fixed( float src );
-
-	virtual ~Fixed();
-
+	Fixed( int src );
+	Fixed( float src );
+	~Fixed();
 	Fixed(const Fixed & src);
 
 	bool operator<(const Fixed &rhs) const;

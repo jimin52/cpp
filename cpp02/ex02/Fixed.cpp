@@ -101,7 +101,7 @@ Fixed Fixed::operator++(int) {
 // ++a;
 Fixed Fixed::operator++() {
 	++_rawBits;
-	return Fixed();
+	return *this;
 }
 
 // a--;
@@ -113,7 +113,7 @@ Fixed Fixed::operator--(int) {
 // --a;
 Fixed Fixed::operator--() {
 	--_rawBits;
-	return Fixed();
+	return *this;
 }
 
 Fixed &Fixed::min(Fixed &lhs, Fixed &rhs) {
