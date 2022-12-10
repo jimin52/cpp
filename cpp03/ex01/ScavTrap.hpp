@@ -20,6 +20,7 @@ public:
 
 	// required function
 	void guardGate();
+	void print();
 };
 
 #endif //CPP_SCAVTRAP_HPP
