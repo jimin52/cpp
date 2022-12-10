@@ -21,13 +21,13 @@ private:
 	void setAttackDamange(unsigned int attackDamange);
 
 	//	my function
-	unsigned int getSafeDamageInput(unsigned int amount);
+	unsigned int getSafeDamageInput(unsigned int amount) const;
 
 public:
 	//	orthodox canonical form
 	ClapTrap();
 	explicit ClapTrap(const std::string &name);
-	virtual ~ClapTrap();
+	~ClapTrap();
 	ClapTrap(ClapTrap const & src);
 	ClapTrap & operator=(ClapTrap const & rhs);
 
@@ -40,10 +40,11 @@ public:
 	const std::string &getName() const;
 	unsigned int getHitPoint() const;
 	unsigned int getEnergyPoint() const;
-	unsigned int getAttackDamange() const;
+	unsigned int getAttackDamange(int i) const;
 
 	//	my function
-	void print(const std::string & variableName) const;
+	virtual void print(const std::string & variableName) const;
+
 };
 
 #endif //CPP_CLAPTRAP_HPP
