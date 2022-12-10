@@ -44,8 +44,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &rhs) {
 	return *this;
 }
 
-
-void ClapTrap::print(const std::string & variableName) const {
+void ScavTrap::print(const std::string & variableName) const {
 	std::cout << "ScavTrap " << variableName
 			  << " name: " << this->name
 			  << " HitPoint: " << this->hitPoint

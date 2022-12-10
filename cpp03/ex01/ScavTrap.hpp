@@ -20,7 +20,7 @@ public:
 
 	// required function
 	void guardGate();
-	void print();
+	void print(const std::string & variableName) const;
 };
 
 #endif //CPP_SCAVTRAP_HPP
