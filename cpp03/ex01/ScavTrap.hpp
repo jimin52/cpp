@@ -7,16 +7,23 @@
 
 #include "ClapTrap.hpp"
 
+
 class ScavTrap : public ClapTrap {
+
 public:
+
+	//	orthodox canonical form
+	ScavTrap();
 	explicit ScavTrap(const std::string &name);
 	~ScavTrap();
-
 	ScavTrap &operator=(const ScavTrap &rhs);
 
-	void print(const std::string &variableName) const;
-
+	// required function
 	void guardGate();
+
+/*********************************************/
+/******			My function				******/
+/*********************************************/
 
 };
 

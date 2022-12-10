@@ -4,6 +4,11 @@
 
 #include "ScavTrap.hpp"
 
+
+ScavTrap::ScavTrap(): ClapTrap() {
+	std::cout << "ScavTrap default constructor called" << std::endl;
+}
+
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
 	hitPoint = 100;
 	energyPoint = 50;
@@ -29,8 +34,4 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &rhs) {
 		this->setAttackDamange(rhs.getAttackDamange());
 	}
 	return *this;
-}
-
-void ScavTrap::print(const std::string &variableName) const {
-	ClapTrap::print(" ScavTrap",variableName);
 }
