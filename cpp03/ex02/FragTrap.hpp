@@ -7,14 +7,21 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : ClapTrap{
+class FragTrap : public ClapTrap{
 
 public:
+	// orthodox canonical form
+	FragTrap();
 	explicit FragTrap(const std::string &name);
-
+	FragTrap(const FragTrap &src);
+	FragTrap &operator=(FragTrap const & rhs);
 	~FragTrap();
 
+	//	required function
 	void highFivesGuys();
+
+	//	my function
+	void print(const std::string & variableName);
 };
 
 

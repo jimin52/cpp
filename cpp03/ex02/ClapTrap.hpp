@@ -9,23 +9,25 @@
 
 class ClapTrap {
 protected:
+	//	private member
 	std::string	name;
 	unsigned int hitPoint;
 	unsigned int energyPoint;
 	unsigned int attackDamange;
-
-	//	my function
-	unsigned int getSafeDamageInput(unsigned int amount);
 
 	//	setter
 	void setHitPoint(unsigned int hitPoint);
 	void setEnergyPoint(unsigned int energyPoint);
 	void setAttackDamange(unsigned int attackDamange);
 
+	//	my function
+	unsigned int getSafeDamageInput(unsigned int amount) const;
+
 public:
 	//	orthodox canonical form
+	ClapTrap();
 	explicit ClapTrap(const std::string &name);
-	virtual ~ClapTrap();
+	~ClapTrap();
 	ClapTrap(ClapTrap const & src);
 	ClapTrap & operator=(ClapTrap const & rhs);
 
@@ -40,9 +42,9 @@ public:
 	unsigned int getEnergyPoint() const;
 	unsigned int getAttackDamange() const;
 
-
 	//	my function
-	void print(const std::string & variableName) const;
+	virtual void print(const std::string & variableName) const;
+
 };
 
 #endif //CPP_CLAPTRAP_HPP
