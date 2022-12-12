@@ -21,9 +21,7 @@ int main( void ) {
 			b1.gradeDecrement(50);
 			std::cout << b1 << std::endl;
 
-		} catch (Bureaucrat::GradeTooHighException &e) {
-			std::cout << e.what();
-		} catch (Bureaucrat::GradeTooLowException &e) {
+		} catch (std::exception &e) {
 			std::cout << e.what();
 		}
 	}
@@ -40,9 +38,7 @@ int main( void ) {
 			b1.gradeIncrement(20);
 			std::cout << b1 << std::endl;
 
-		} catch (Bureaucrat::GradeTooHighException &e) {
-			std::cout << e.what();
-		} catch (Bureaucrat::GradeTooLowException &e) {
+		} catch (std::exception &e) {
 			std::cout << e.what();
 		}
 	}
@@ -57,9 +53,7 @@ int main( void ) {
 
 			std::cout << b2 << std::endl;
 
-		} catch (Bureaucrat::GradeTooHighException &e) {
-			std::cout << e.what();
-		} catch (Bureaucrat::GradeTooLowException &e) {
+		} catch (std::exception &e) {
 			std::cout << e.what();
 		}
 	}
