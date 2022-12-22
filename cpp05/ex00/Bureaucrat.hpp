@@ -7,6 +7,7 @@
 
 #include <string>
 #include <ostream>
+#include <iostream>
 
 class Bureaucrat {
 private:
@@ -35,7 +36,6 @@ public:
 	public:
 		const char *what() const throw();
 	};
-
 	class GradeTooLowException : public std::exception {
 	public:
 		const char *what() const throw();

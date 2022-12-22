@@ -2,31 +2,11 @@
 // Created by jimin on 2022/12/12.
 //
 
-#include <iostream>
 #include "Bureaucrat.hpp"
 
-
-const std::string &Bureaucrat::getName() const {
-	return name;
-}
-
-int Bureaucrat::getGrade() const {
-	return grade;
-}
-
-void Bureaucrat::gradeIncrement(int value) {
-	if (grade - value < 1)
-		throw Bureaucrat::GradeTooHighException();
-	else
-		grade -= value;
-}
-
-void Bureaucrat::gradeDecrement(int value) {
-	if (grade + value > 150)
-		throw Bureaucrat::GradeTooLowException();
-	else
-		grade += value;
-}
+/*********************************************/
+/******		orthodox canonical form		******/
+/*********************************************/
 
 Bureaucrat::Bureaucrat() {
 	std::cout << "Bureaucrat default constructor called" << std::endl;
@@ -50,6 +30,10 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs) {
 	return *this;
 }
 
+/*********************************************/
+/******	        my constructor          ******/
+/*********************************************/
+
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name) {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
@@ -59,9 +43,47 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name) {
 	std::cout << "Bureaucrat name: " << name << " grade: " << std::to_string(grade) << " constructor called" << std::endl;
 }
 
+/*********************************************/
+/******				getter				******/
+/*********************************************/
+
+const std::string &Bureaucrat::getName() const {
+	return name;
+}
+
+int Bureaucrat::getGrade() const {
+	return grade;
+}
+
+/*********************************************/
+/******	     Required functions         ******/
+/*********************************************/
+
+void Bureaucrat::gradeIncrement(int value) {
+	if (grade - value < 1)
+		throw Bureaucrat::GradeTooHighException();
+	else
+		grade -= value;
+}
+
+void Bureaucrat::gradeDecrement(int value) {
+	if (grade + value > 150)
+		throw Bureaucrat::GradeTooLowException();
+	else
+		grade += value;
+}
+
+/*********************************************/
+/******        outstream operator       ******/
+/*********************************************/
+
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
 	return os << bureaucrat.getName() << ", bureaucrat grade " << std::to_string(bureaucrat.getGrade());
 }
+
+/*********************************************/
+/******      exception override         ******/
+/*********************************************/
 
 const char *Bureaucrat::GradeTooHighException::what() const throw() {
 	return "Bureaucrat Grade Too High !!!";
