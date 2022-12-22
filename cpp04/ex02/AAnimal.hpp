@@ -22,7 +22,7 @@ public:
 	AAnimal &operator=(const AAnimal & rhs);
 
 	//	requested function
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0;
 
 	//	getter
 	const std::string &getType() const;

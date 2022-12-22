@@ -20,7 +20,7 @@ public:
 	Animal &operator=(const Animal & rhs);
 
 	//	requested function
-	virtual void makeSound() const = 0;
+	virtual void makeSound() const;
 
 	//	getter
 	const std::string &getType() const;

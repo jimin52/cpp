@@ -16,11 +16,11 @@ int main() {
 		std::cout << "*************************************************" << std::endl;
 		std::cout << "" << std::endl;
 
-		//	Animal a1;
-		//	a1.makeSound();
+		Animal a1;
+		a1.makeSound();
 
-		AAnimal aa1;
-		aa1.makeSound();
+		//AAnimal aa1;
+		//aa1.makeSound();
 	}
 	return 0;
 }
