@@ -21,7 +21,6 @@ public:
 	bool	IsEmpty( void ) const ;
 	void	setContact(std::string fName, std::string lName, std::string nName, std::string pNumber, std::string dSecret);
 
-
 private:
 
 	std::string	firstName;
