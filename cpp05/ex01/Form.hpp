@@ -17,12 +17,13 @@ private:
 	const int	signGrade;
 	const int	execGrade;
 
+	//	orthodox canonical form
+	Form & operator=(const Form &rhs);
 public:
 	//	orthodox canonical form
 	Form();
 	Form(const Form & src);
 	virtual ~Form();
-	Form & operator=(const Form &rhs);
 
 	Form(const std::string &name, const int signGrade, const int execGrade);
 
