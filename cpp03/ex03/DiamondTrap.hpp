@@ -9,7 +9,6 @@
 #include "FragTrap.hpp"
 
 class DiamondTrap : ScavTrap, FragTrap{
-
 };
 
 

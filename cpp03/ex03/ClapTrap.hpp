@@ -24,6 +24,7 @@ protected:
 
 public:
 	//	orthodox canonical form
+	ClapTrap();
 	explicit ClapTrap(const std::string &name);
 	virtual ~ClapTrap();
 	ClapTrap(ClapTrap const & src);
@@ -38,8 +39,7 @@ public:
 	const std::string &getName() const;
 	unsigned int getHitPoint() const;
 	unsigned int getEnergyPoint() const;
-	unsigned int getAttackDamange() const;
-
+	unsigned int getAttackDamange(int i) const;
 
 	//	my function
 	void print(const std::string & variableName) const;
