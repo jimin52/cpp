@@ -6,22 +6,17 @@
 #    By: jimin <jimin@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 18:08:03 by jimin             #+#    #+#              #
-#    Updated: 2022/12/05 14:12:25 by jimin            ###   ########.fr        #
+#    Updated: 2022/12/24 05:18:58 by jimin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombie
-CXX = c++ -g3
+CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -f
 
-#HEADER_SRCS	= Megaphone.hpp
-#HEADER_DIR	= include/
-#HEADER_PATH	= $(addprefix $(HEADER_DIR), $(HEADER_SRCS))
 
 SRCS	= $(wildcard *.cpp)
-#PATH_DIR = ./src/
-#PATH	= $(addprefix $(PATH_DIR), $(SRCS))
 
 OBJS = $(SRCS:.cpp=.o)
 
