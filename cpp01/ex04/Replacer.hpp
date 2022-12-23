@@ -24,7 +24,7 @@ private:
 
 public:
 	//Constructor, Destructor
-	Replacer(const std::string &infileName, const std::string &fromText, const std::string &toText);
+	explicit Replacer(const std::string &infileName, const std::string &fromText, const std::string &toText);
 	virtual ~Replacer();
 
 	void ReplaceText();
@@ -35,6 +35,19 @@ public:
 	const std::string &getFromText() const;
 	const std::string &getToText() const;
 
+	//exception classes
+	class EmptyFileException : public std::exception {
+		public:
+			const char *what() const throw();
+	};
+	class EmptyInputException : public std::exception {
+		public:
+			const char *what() const throw();
+	};
+	class FileStreamException : public std::exception {
+		public:
+			const char *what() const throw();
+	};
 };
 
 
