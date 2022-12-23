@@ -15,6 +15,7 @@ public:
 
 private:
 	std::string	level[4];
+	void (Harl::*func[4])(void);
 	int	get_level(std::string input);
 	void	debug();
 	void	info();
