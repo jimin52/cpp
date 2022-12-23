@@ -55,3 +55,25 @@ void Harl::complain(std::string input) {
 	else
 		(this->*func[inputLevel])();
 }
+
+void 	Harl::complainFilter(std::string input){
+
+	int level = get_level(input);
+	switch (level){
+		case 0:
+			debug();
+			std::cout << std::endl;
+		case 1:
+			info();
+			std::cout << std::endl;
+		case 2:
+			warning();
+			std::cout << std::endl;
+		case 3:
+			error();
+			std::cout << std::endl;
+			break;
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	}
+}

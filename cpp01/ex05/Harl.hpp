@@ -11,15 +11,15 @@ class Harl {
 public:
 	Harl();
 	virtual ~Harl();
-	void	debug();
-	void	info();
-	void	warning();
-	void	error();
 	void	complain(std::string input);
 
 private:
 	std::string	level[4];
 	int	get_level(std::string input);
+	void	debug();
+	void	info();
+	void	warning();
+	void	error();
 };
 
 

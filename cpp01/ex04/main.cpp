@@ -14,8 +14,6 @@ int	main( int argc, char* argv[]) {
 			Replacer replacer(argv[1], argv[2], argv[3]);
 			replacer.ReplaceText();
 		}
-	} catch (MyException e) {
-		std::cerr << e.what() << std::endl;
 	} catch (std::exception e){
 		std::cerr << e.what() << std::endl;
 	}
