@@ -6,13 +6,16 @@
 #    By: jimin <jimin@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 18:08:03 by jimin             #+#    #+#              #
-#    Updated: 2022/12/31 18:50:16 by jimin            ###   ########.fr        #
+#    Updated: 2022/12/31 19:20:33 by jimin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = replacer 
-CXX = c++
+NAME = replacer
+CXX = c++ -g3
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+
+SRCS	= $(wildcard *.cpp)
+OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
 
