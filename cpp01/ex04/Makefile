@@ -6,17 +6,13 @@
 #    By: jimin <jimin@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 18:08:03 by jimin             #+#    #+#              #
-#    Updated: 2022/12/24 06:06:13 by jimin            ###   ########.fr        #
+#    Updated: 2022/12/31 18:50:16 by jimin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = replacer 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-RM = rm -f
-
-SRCS	= $(wildcard *.cpp)
-OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
 
@@ -32,8 +28,5 @@ fclean : clean
 re : 
 	$(MAKE) fclean 
 	$(MAKE) all
-
-.cpp.o :
-	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 .PHONY: all clean fclean re
