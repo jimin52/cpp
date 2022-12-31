@@ -53,6 +53,8 @@ int main() {
 			std::cout <<"/******     explicit test        *******/" << std::endl;
 			std::cout <<"/***************************************/" << std::endl;
 			std::cout << std::endl;
+			//HumanA a;
+			//a.attack();
 
 		}
 	}
