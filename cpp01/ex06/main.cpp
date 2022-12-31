@@ -7,8 +7,11 @@
 
 int	main(int argc, char* argv[]) {
 
-	if (argc != 2) {
-		std::cerr << "invalid input" << std::endl;
+	if (argc == 1) {
+		std::cout << "input in [INFO, DEBUG, WARNING, ERROR]" << std::endl;
+		return 0;
+	} else if (argc > 2) {
+		std::cerr << "input one argument" << std::endl;
 		return 1;
 	}
 
