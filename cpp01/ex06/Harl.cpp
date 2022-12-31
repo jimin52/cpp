@@ -9,6 +9,12 @@ Harl::Harl() {
 	level[1] = "INFO";
 	level[2] = "WARNING";
 	level[3] = "ERROR";
+
+	func[0] = &Harl::debug;
+	func[1] = &Harl::info;
+	func[2] = &Harl::warning;
+	func[3] = &Harl::error;
+
 	std::cout << "Harl constructed" << std::endl;
 }
 
@@ -46,9 +52,9 @@ int	Harl::get_level(std::string input) {
 }
 
 void Harl::complain(std::string input) {
-	static void (Harl::*func[5]) (void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 	int inputLevel;
+
 	inputLevel = get_level(input);
 	if (inputLevel == -1)
 		std::cerr << "Invalid Command" << std::endl;

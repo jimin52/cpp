@@ -10,8 +10,10 @@ int main() {
 	Harl	harl;
 
 	harl.complain("INFO");
-	harl.complain("Isdlkfj");
 	harl.complain("DEBUG");
+	harl.complain("ERROR");
+	harl.complain("WARNING");
+	harl.complain("Isdlkfj");
 	harl.complain("");
 	harl.complain("INFODEBUGERROR");
 	return 0;

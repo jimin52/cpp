@@ -11,12 +11,13 @@ class HumanB {
 
 private:
 
-	std::string	name;
+	const std::string	name;
 	Weapon	*myWeapon;
 
 public:
 	//constructor
 	explicit HumanB(const std::string &name);
+	explicit HumanB(const std::string &name, Weapon *weapon);
 
 	//destructor
 	virtual ~HumanB();

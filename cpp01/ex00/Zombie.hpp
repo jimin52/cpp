@@ -11,8 +11,8 @@ class Zombie {
 
 public:
 
-	Zombie( std::string );
-	~Zombie();
+	explicit Zombie( std::string );
+	virtual ~Zombie();
 
 	void Announce();
 

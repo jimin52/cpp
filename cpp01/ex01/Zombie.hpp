@@ -12,7 +12,7 @@ class Zombie {
 public:
 
 	explicit Zombie();
-	~Zombie();
+	virtual ~Zombie();
 
 	void Announce();
 

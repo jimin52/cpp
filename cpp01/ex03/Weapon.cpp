@@ -12,7 +12,9 @@ void Weapon::setType(const std::string &type) {
 	Weapon::type = type;
 }
 
-Weapon::Weapon(const std::string &type) : type(type) {}
+Weapon::Weapon(const std::string &type) : type(type) {
+	std::cout << "Weapon " << this->type << " is construted" << std::endl;
+}
 
 Weapon::~Weapon() {
 	std::cout << "Weapon " << this->type << " is destruted" << std::endl;

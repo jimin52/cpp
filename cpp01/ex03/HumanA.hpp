@@ -12,7 +12,7 @@ class HumanA {
 
 private:
 
-	std::string	name;
+	const std::string	name;
 	Weapon	&myWeapon;
 
 public:
@@ -22,6 +22,7 @@ public:
 	virtual ~HumanA();
 
 	void attack();
+	void printweapon();
 
 };
 

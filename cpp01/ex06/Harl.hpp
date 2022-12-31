@@ -16,6 +16,7 @@ public:
 
 private:
 	std::string	level[4];
+	void (Harl::*func[4])(void);
 	void	debug();
 	void	info();
 	void	warning();

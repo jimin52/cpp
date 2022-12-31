@@ -19,6 +19,13 @@ int main() {
 		Animal a1;
 		a1.makeSound();
 
+	}
+	{
+		std::cout << "" << std::endl;
+		std::cout << "*************************************************" << std::endl;
+		std::cout << "*******         AAnimal make test         ********" << std::endl;
+		std::cout << "*************************************************" << std::endl;
+		std::cout << "" << std::endl;
 		//AAnimal aa1;
 		//aa1.makeSound();
 	}
