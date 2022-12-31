@@ -8,11 +8,11 @@
 /******		orthodox canonical form		******/
 /*********************************************/
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("SCF", SCF_SIGN_GRADE, SCF_EXEC_GRADE), target("default") {
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("SCF", SCF_SIGN_GRADE, SCF_EXEC_GRADE), target("default") {
 	std::cout << "ShruberryCreationForm default constructor called" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : AForm("SCF", SCF_SIGN_GRADE, SCF_EXEC_GRADE), target(src.getTarget()) {
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &src) : Form("SCF", SCF_SIGN_GRADE, SCF_EXEC_GRADE), target(src.getTarget()) {
 	std::cout << "ShrubberyCreationForm copy constructor called" << std::endl;
 }
 
@@ -29,7 +29,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm &r
 /******	       required function        ******/
 /*********************************************/
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : AForm("SCF", SCF_SIGN_GRADE, SCF_EXEC_GRADE), target(target) {
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target) : Form("SCF", SCF_SIGN_GRADE, SCF_EXEC_GRADE), target(target) {
 	std::cout << "ShrubberyCreationForm " << target << " constructor called" << std::endl;
 }
 

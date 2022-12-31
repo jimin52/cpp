@@ -9,7 +9,7 @@
 #include <ostream>
 #include "AForm.hpp"
 
-class AForm;
+class Form;
 
 class Bureaucrat {
 private:
@@ -44,8 +44,8 @@ public:
 	};
 
 	//	required function
-	void signForm(AForm & form);
-	void executeForm(AForm const & form);
+	void signForm(Form & form);
+	void executeForm(Form const & form);
 };
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &bureaucrat);

@@ -8,20 +8,20 @@
 /******		orthodox canonical form		******/
 /*********************************************/
 
-AForm::AForm() : name(""), sign(false), signGrade(150), execGrade(150){
-	std::cout << "AForm default constructor called" << std::endl;
+Form::Form() : name(""), sign(false), signGrade(150), execGrade(150){
+	std::cout << "Form default constructor called" << std::endl;
 }
 
-AForm::~AForm() {
-	std::cout << "AForm destructor called" << std::endl;
+Form::~Form() {
+	std::cout << "Form destructor called" << std::endl;
 }
 
-AForm::AForm(const AForm &src) : name(src.name), sign(src.sign), signGrade(src.signGrade), execGrade(src.execGrade) {
-	std::cout << "AForm copy constructor called" << std::endl;
+Form::Form(const Form &src) : name(src.name), sign(src.sign), signGrade(src.signGrade), execGrade(src.execGrade) {
+	std::cout << "Form copy constructor called" << std::endl;
 }
 
-AForm &AForm::operator=(const AForm &rhs) {
-	std::cout << "AForm operator= called" << std::endl;
+Form &Form::operator=(const Form &rhs) {
+	std::cout << "Form operator= called" << std::endl;
 	(void) rhs;
 	return *this;
 }
@@ -30,7 +30,7 @@ AForm &AForm::operator=(const AForm &rhs) {
 /******	        my constructor          ******/
 /*********************************************/
 
-AForm::AForm(const std::string &name,
+Form::Form(const std::string &name,
 			 const int signGrade,
 			 const int execGrade)
 		: name(name),
@@ -39,29 +39,29 @@ AForm::AForm(const std::string &name,
 		execGrade(execGrade) {
 
 	if (signGrade < 1 || execGrade < 1)
-		throw AForm::GradeTooHighException();
+		throw Form::GradeTooHighException();
 	if (signGrade > 150 || execGrade > 150)
-		throw AForm::GradeTooLowException();
-	std::cout << "AForm constructor called" << std::endl;
+		throw Form::GradeTooLowException();
+	std::cout << "Form constructor called" << std::endl;
 }
 
 /*********************************************/
 /******				getter				******/
 /*********************************************/
 
-const std::string &AForm::getName() const {
+const std::string &Form::getName() const {
 	return name;
 }
 
-bool AForm::isSign() const {
+bool Form::isSign() const {
 	return sign;
 }
 
-const int AForm::getSignGrade() const {
+const int Form::getSignGrade() const {
 	return signGrade;
 }
 
-const int AForm::getExecGrade() const {
+const int Form::getExecGrade() const {
 	return execGrade;
 }
 
@@ -69,13 +69,13 @@ const int AForm::getExecGrade() const {
 /******	     Required functions         ******/
 /*********************************************/
 
-bool AForm::beSigned(const Bureaucrat &bureau) {
+bool Form::beSigned(const Bureaucrat &bureau) {
 	if (bureau.getGrade() <= signGrade)
 		sign = true;
 	return sign;
 }
 
-bool AForm::isExecutable(const Bureaucrat &executor) const {
+bool Form::isExecutable(const Bureaucrat &executor) const {
 	if (execGrade >= executor.getGrade())
 		return true;
 	else
@@ -86,22 +86,22 @@ bool AForm::isExecutable(const Bureaucrat &executor) const {
 /******      exception override         ******/
 /*********************************************/
 
-const char *AForm::GradeTooHighException::what() const throw() {
-	return "AForm Grade Too High !!!";
+const char *Form::GradeTooHighException::what() const throw() {
+	return "Form Grade Too High !!!";
 }
 
-const char *AForm::GradeTooLowException::what() const throw() {
-	return "AForm Grade Too Low !!!";
+const char *Form::GradeTooLowException::what() const throw() {
+	return "Form Grade Too Low !!!";
 }
 
-const char *AForm::GradeNotEnoughException::what() const throw() {
+const char *Form::GradeNotEnoughException::what() const throw() {
 	return "Executor's Grade Is Not Enough";
 }
 /*********************************************/
 /******	     outstream operator         ******/
 /*********************************************/
 
-std::ostream &operator<<(std::ostream &os, const AForm &form) {
+std::ostream &operator<<(std::ostream &os, const Form &form) {
 	return os << "name " << form.getName()
 	<< ", signed: " << form.isSign()
 	<< ", sign grade: " << form.getSignGrade()

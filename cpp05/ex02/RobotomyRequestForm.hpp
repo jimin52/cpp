@@ -9,7 +9,7 @@
 #include <sys/time.h>
 
 
-class RobotomyRequestForm : public AForm{
+class RobotomyRequestForm : public Form{
 private:
 	std::string target;
 	static const int RRF_SIGN_GRADE = 72;

@@ -74,7 +74,7 @@ void Bureaucrat::gradeDecrement(int value) {
 		grade += value;
 }
 
-void Bureaucrat::signForm(AForm &form) {
+void Bureaucrat::signForm(Form &form) {
 	if (form.beSigned(*this) == true) {
 		std::cout << name << " signed " << form.getName() << std::endl;
 	} else {
@@ -82,7 +82,7 @@ void Bureaucrat::signForm(AForm &form) {
 	}
 }
 
-void Bureaucrat::executeForm(AForm const &form) {
+void Bureaucrat::executeForm(Form const &form) {
 	try {
 		form.execute(*this);
 		std::cout << name << " executed " << form.getName() << std::endl;

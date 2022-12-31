@@ -10,7 +10,6 @@ Intern::Intern() {
 	formNameArray[0] = "presidential pardon";
 	formNameArray[1] = "robotomy request";
 	formNameArray[2] = "shrubbery creation";
-
 }
 
 Intern::~Intern() {
