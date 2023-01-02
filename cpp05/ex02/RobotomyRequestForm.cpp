@@ -8,7 +8,7 @@
 /******		orthodox canonical form		******/
 /*********************************************/
 
-RobotomyRequestForm::RobotomyRequestForm() : AForm("RRF", RRF_SIGN_GRADE, RRF_EXEC_GRADE) , target("default") {
+RobotomyRequestForm::RobotomyRequestForm() : Form("RRF", RRF_SIGN_GRADE, RRF_EXEC_GRADE) , target("default") {
 	std::cout << "RRF default constructor called" << std::endl;
 }
 
@@ -29,7 +29,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &r
 /******	     required function          ******/
 /*********************************************/
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : AForm("RRF", RRF_SIGN_GRADE, RRF_EXEC_GRADE), target(target) {
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target) : Form("RRF", RRF_SIGN_GRADE, RRF_EXEC_GRADE), target(target) {
 	std::cout << "RRF constructor called" << std::endl;
 }
 

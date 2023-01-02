@@ -8,7 +8,7 @@
 /******		orthodox canonical form		******/
 /*********************************************/
 
-PresidentialPardonForm::PresidentialPardonForm() : AForm("PPF", PPF_SIGN_GRADE, PPF_EXEC_GRADE), target("default") {
+PresidentialPardonForm::PresidentialPardonForm() : Form("PPF", PPF_SIGN_GRADE, PPF_EXEC_GRADE), target("default") {
 	std::cout << "PPF default constructor called" << std::endl;
 }
 
@@ -30,7 +30,7 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 /******	     required function          ******/
 /*********************************************/
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : AForm("PPF", PPF_SIGN_GRADE, PPF_EXEC_GRADE), target(target) {
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target) : Form("PPF", PPF_SIGN_GRADE, PPF_EXEC_GRADE), target(target) {
 	std::cout << "PPF constructor called" << std::endl;
 }
 

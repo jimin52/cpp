@@ -10,7 +10,7 @@
 
 class Bureaucrat;
 
-class AForm {
+class Form {
 private:
 	const std::string	name;
 	bool	sign;
@@ -18,16 +18,16 @@ private:
 	const int	execGrade;
 
 	//	orthodox canonical form
-	AForm & operator=(const AForm &rhs);
+	Form & operator=(const Form &rhs);
 
 public:
 	//	orthodox canonical form
-	AForm();
-	AForm(const AForm & src);
-	virtual ~AForm();
+	Form();
+	Form(const Form & src);
+	virtual ~Form();
 
 	//	my constructor
-	AForm(const std::string &name, const int signGrade, const int execGrade);
+	Form(const std::string &name, const int signGrade, const int execGrade);
 
 	//	getter
 	const std::string &getName() const;
@@ -57,6 +57,6 @@ public:
 	bool isExecutable(const Bureaucrat & executor) const;
 };
 
-std::ostream &operator<<(std::ostream &os, const AForm &form);
+std::ostream &operator<<(std::ostream &os, const Form &form);
 
 #endif //CPP_AFORM_HPP

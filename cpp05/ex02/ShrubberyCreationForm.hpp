@@ -8,7 +8,7 @@
 #include "AForm.hpp"
 #include "fstream"
 
-class ShrubberyCreationForm : public AForm {
+class ShrubberyCreationForm : public Form {
 private:
 	std::string target;
 	static const int SCF_SIGN_GRADE = 145;
