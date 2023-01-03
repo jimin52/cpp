@@ -5,20 +5,35 @@
 #include "Fixed.hpp"
 
 /*********************************************/
-/******			Constructor				******/
+/******    Orthodox Canonical Form      ******/
 /*********************************************/
 
 Fixed::Fixed() : _rawBits(0) {
 	std::cout << "Default constructor Called" << std::endl;
 }
 
-Fixed::Fixed(const int src) {
-	_rawBits = src << _FRACTIONAL_BIT_NUM;
+Fixed::~Fixed() {
+	std::cout << "Destructed Called" << std::endl;
+}
+
+Fixed::Fixed(const int & src) {
+	_rawBits = src << _MY_FRACTIONAL_BIT_NUM;
 	std::cout << "Int constructor Called" << std::endl;
 }
 
-Fixed::Fixed(const float src) {
-	_rawBits = static_cast<int>(std::roundf(src * (1 << _FRACTIONAL_BIT_NUM)));
+Fixed & Fixed::operator=(const Fixed & rhs) {
+	if (this != &rhs)
+		setRawBits(rhs._rawBits);
+	std::cout << "Copy assignment operator Called" << std::endl;
+	return *this;
+}
+
+/*********************************************/
+/******          Constructor            ******/
+/*********************************************/
+
+Fixed::Fixed(const float & src) {
+	_rawBits = static_cast<int>(std::roundf(src * (1 << _MY_FRACTIONAL_BIT_NUM)));
 	std::cout << "Float constructor Called" << std::endl;
 }
 
@@ -27,23 +42,16 @@ Fixed::Fixed(const Fixed & src) {
 	std::cout << "Copy constructor Called" << std::endl;
 }
 
-/*********************************************/
-/******			Destructor				******/
-/*********************************************/
-
-Fixed::~Fixed() {
-	std::cout << "Destructed Called" << std::endl;
-}
 
 /*********************************************/
 /******			getter,setter			******/
 /*********************************************/
 
-int Fixed::getRawBits() const {
+const int & Fixed::getRawBits() const {
 	return _rawBits;
 }
 
-void Fixed::setRawBits(const int raw) {
+void Fixed::setRawBits(const int & raw) {
 	_rawBits = raw;
 }
 
@@ -51,12 +59,6 @@ void Fixed::setRawBits(const int raw) {
 /******			operator				******/
 /*********************************************/
 
-Fixed & Fixed::operator=(const Fixed & rhs) {
-	if (this != &rhs)
-		setRawBits(rhs._rawBits);
-	std::cout << "Copy assignment operator Called" << std::endl;
-	return *this;
-}
 
 bool Fixed::operator<(const Fixed &rhs) const {
 	return _rawBits < rhs._rawBits;
@@ -116,29 +118,6 @@ Fixed Fixed::operator--() {
 	return *this;
 }
 
-Fixed &Fixed::min(Fixed &lhs, Fixed &rhs) {
-	if (lhs < rhs )
-		return lhs;
-	return rhs;
-}
-
-const Fixed &Fixed::min(const Fixed &lhs, const Fixed &rhs) {
-	if (lhs < rhs )
-		return lhs;
-	return rhs;
-}
-
-Fixed &Fixed::max(Fixed &lhs, Fixed &rhs) {
-	if (lhs > rhs )
-		return lhs;
-	return rhs;
-}
-
-const Fixed &Fixed::max(const Fixed &lhs, const Fixed &rhs) {
-	if (lhs > rhs )
-		return lhs;
-	return rhs;
-}
 std::ostream & operator<<(std::ostream &os, const Fixed &rhs) {
 	os << rhs.toFloat();
 	return os;
@@ -148,14 +127,23 @@ std::ostream & operator<<(std::ostream &os, const Fixed &rhs) {
 /******			member functions		******/
 /*********************************************/
 
+const Fixed &Fixed::min(const Fixed &lhs, const Fixed &rhs) {
+	if (lhs < rhs)
+		return lhs;
+	return rhs;
+}
+
+const Fixed &Fixed::max(const Fixed &lhs, const Fixed &rhs) {
+	if (lhs > rhs)
+		return lhs;
+	return rhs;
+}
+
 float Fixed::toFloat() const {
-	return float(_rawBits) / float(1 << _FRACTIONAL_BIT_NUM);
+	return float(_rawBits) / float(1 << _MY_FRACTIONAL_BIT_NUM);
 }
 
 int Fixed::toInt() const {
-	return _rawBits >> _FRACTIONAL_BIT_NUM;
+	return _rawBits >> _MY_FRACTIONAL_BIT_NUM;
 }
-
-
-
 

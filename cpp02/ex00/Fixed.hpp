@@ -9,21 +9,21 @@
 class Fixed {
 
 private:
+
 	int	rawBits;
 	static const int	bitNumber = 8;
 
 public:
-	explicit Fixed();
 
+	//	orthodox canonical form
+	Fixed();
 	virtual ~Fixed();
-
 	Fixed(const Fixed & src);
-
 	Fixed & operator=(const Fixed &src);
 
-	int getRawBits() const;
-
-	void setRawBits( int const raw );
+	//	getter && setter
+	const int &getRawBits() const;
+	void setRawBits( const int & raw );
 
 };
 

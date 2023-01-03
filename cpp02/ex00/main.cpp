@@ -5,6 +5,9 @@
 #include <iostream>
 #include "Fixed.hpp"
 
+void printA(Fixed a) {
+	std::cout << a.getRawBits() << std::endl;
+}
 int main( void ) {
 	Fixed a;
 	Fixed b(a);
