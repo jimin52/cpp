@@ -16,9 +16,9 @@ Fixed::~Fixed() {
 	std::cout << "Destructed Called" << std::endl;
 }
 
-Fixed::Fixed(const int & src) {
-	_rawBits = src << _MY_FRACTIONAL_BIT_NUM;
-	std::cout << "Int constructor Called" << std::endl;
+Fixed::Fixed(const Fixed & src) {
+	*this = src;
+	std::cout << "Copy constructor Called" << std::endl;
 }
 
 Fixed & Fixed::operator=(const Fixed & rhs) {
@@ -37,9 +37,9 @@ Fixed::Fixed(const float & src) {
 	std::cout << "Float constructor Called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed & src) {
-	*this = src;
-	std::cout << "Copy constructor Called" << std::endl;
+Fixed::Fixed(const int & src) {
+	_rawBits = src << _MY_FRACTIONAL_BIT_NUM;
+	std::cout << "Int constructor Called" << std::endl;
 }
 
 
@@ -95,9 +95,9 @@ Fixed Fixed::operator/(const Fixed &rhs) const {
 
 // a++;
 Fixed Fixed::operator++(int) {
-	Fixed* temp(this);
+	Fixed temp(*this);
 	++_rawBits;
-	return *temp;
+	return temp;
 }
 
 // ++a;
@@ -108,9 +108,9 @@ Fixed Fixed::operator++() {
 
 // a--;
 Fixed Fixed::operator--(int) {
-	Fixed* temp(this);
+	Fixed temp(*this);
 	--_rawBits;
-	return *temp;
+	return temp;
 }
 // --a;
 Fixed Fixed::operator--() {

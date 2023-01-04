@@ -22,7 +22,7 @@ public:
 	Fixed & operator=(const Fixed &src);
 
 	//	getter && setter
-	const int &getRawBits() const;
+	const int & getRawBits() const;
 	void setRawBits( const int & raw );
 
 };

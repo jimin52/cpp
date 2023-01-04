@@ -6,7 +6,8 @@
 #define CPP_FIXED_HPP
 
 
-#include <ostream>
+#include <iostream>
+#include <cmath>
 
 class Fixed {
 
@@ -15,22 +16,22 @@ private:
 	static const int	_MY_FRACTIONAL_BIT_NUM = 8;
 
 public:
+	//	orthodox canonical form
 	Fixed();
-	Fixed(const int src);
-	Fixed(const float src);
-
 	virtual ~Fixed();
-
 	Fixed(const Fixed & src);
-
 	Fixed & operator=(const Fixed &src);
 
-	int getRawBits() const;
+	//	constructor
+	Fixed(const int & src);
+	Fixed(const float & src);
 
+	//	getter && setter
+	int getRawBits() const;
 	void setRawBits( const int raw );
 
+	//	member functions
 	float toFloat( void ) const;
-
 	int toInt( void ) const;
 
 };
