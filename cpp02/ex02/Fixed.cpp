@@ -34,12 +34,12 @@ Fixed & Fixed::operator=(const Fixed & rhs) {
 
 Fixed::Fixed(const float & src) {
 	_rawBits = static_cast<int>(std::roundf(src * (1 << _MY_FRACTIONAL_BIT_NUM)));
-	std::cout << "Float constructor Called" << std::endl;
+	std::cout << "Fixed float constructor Called" << std::endl;
 }
 
 Fixed::Fixed(const int & src) {
 	_rawBits = src << _MY_FRACTIONAL_BIT_NUM;
-	std::cout << "Int constructor Called" << std::endl;
+	std::cout << "Fixed int constructor Called" << std::endl;
 }
 
 
