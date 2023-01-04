@@ -75,6 +75,13 @@ bool Fixed::operator<=(const Fixed &rhs) const {
 bool Fixed::operator>=(const Fixed &rhs) const {
 	return !(*this < rhs);
 }
+bool Fixed::operator==(const Fixed &rhs) const {
+	return !(rhs < *this || rhs > *this);
+}
+
+bool Fixed::operator!=(const Fixed &rhs) const {
+	return (rhs < *this || rhs > *this);
+}
 
 Fixed Fixed::operator+(const Fixed &rhs) const {
 	return Fixed(this->toFloat() + rhs.toFloat());

@@ -59,12 +59,22 @@ int main( void ) {
 		f1 = f2;
 		std::cout << "f1.getRawBits: " << f1.getRawBits() << std::endl;
 		std::cout << "f2.getRawBits: " << f2.getRawBits() << std::endl;
+		if (f1 == f2)
+			std::cout << "f1 == f2" << std::endl;
+		else
+			std::cout << "f1 != f2" << std::endl;
 
 		std::cout << std::endl;
 		std::cout << "f2.setRawBits(10000);" << std::endl;
 		f2.setRawBits(10000);
 		std::cout << "f1.getRawBits: " << f1.getRawBits() << std::endl;
 		std::cout << "f2.getRawBits: " << f2.getRawBits() << std::endl;
+
+		if (f1 == f2)
+			std::cout << "f1 == f2" << std::endl;
+		else
+			std::cout << "f1 != f2" << std::endl;
+
 	}
 	return 0;
 }
