@@ -15,10 +15,6 @@ private:
 	unsigned int energyPoint;
 	unsigned int attackDamange;
 
-	//	setter
-	void setHitPoint(unsigned int hitPoint);
-	void setEnergyPoint(unsigned int energyPoint);
-	void setAttackDamange(unsigned int attackDamange);
 
 	//	my function
 	unsigned int getSafeDamageInput(unsigned int amount) const;
@@ -32,15 +28,15 @@ public:
 	ClapTrap & operator=(ClapTrap const & rhs);
 
 	//	required function
-	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+	void attack(const std::string & target);
+	void takeDamage(const unsigned int & amount);
+	void beRepaired(const unsigned int & amount);
 
 	//	getter
-	const std::string &getName() const;
-	unsigned int getHitPoint() const;
-	unsigned int getEnergyPoint() const;
-	unsigned int getAttackDamange(int i) const;
+	const std::string & getName() const;
+	const unsigned int & getHitPoint() const;
+	const unsigned int & getEnergyPoint() const;
+	const unsigned int & getAttackDamange() const;
 
 	//	my function
 	virtual void print(const std::string & variableName) const;

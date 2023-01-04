@@ -25,19 +25,16 @@ ClapTrap::~ClapTrap() {
 
 ClapTrap::ClapTrap(ClapTrap const &src) {
 	std::cout << "Copy constructor called" << std::endl;
-	this->name = src.name;
-	this->hitPoint = src.hitPoint;
-	this->energyPoint = src.energyPoint;
-	this->attackDamange = src.attackDamange;
+	*this = src;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
 	std::cout << "ClapTrap copy operator called" << std::endl;
 	if (this != &rhs) {
-		this->name = rhs.getName();
-		this->setHitPoint(rhs.getHitPoint());
-		this->setEnergyPoint(rhs.getEnergyPoint());
-		this->setAttackDamange(rhs.getAttackDamange());
+		this->name = rhs.name;
+		this->hitPoint = rhs.hitPoint;
+		this->energyPoint = rhs.energyPoint;
+		this->attackDamange = rhs.attackDamange;
 	}
 	return *this;
 }
@@ -46,18 +43,18 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
 /******				setter				******/
 /*********************************************/
 
-void ClapTrap::setEnergyPoint(unsigned int energyPoint) {
-	ClapTrap::energyPoint = energyPoint;
-}
+//void ClapTrap::setEnergyPoint(unsigned int energyPoint) {
+	//ClapTrap::energyPoint = energyPoint;
+//}
 
 
-void ClapTrap::setHitPoint(unsigned int hitPoint) {
-	ClapTrap::hitPoint = hitPoint;
-}
+//void ClapTrap::setHitPoint(unsigned int hitPoint) {
+	//ClapTrap::hitPoint = hitPoint;
+//}
 
-void ClapTrap::setAttackDamange(unsigned int attackDamange) {
-	ClapTrap::attackDamange = attackDamange;
-}
+//void ClapTrap::setAttackDamange(unsigned int attackDamange) {
+	//ClapTrap::attackDamange = attackDamange;
+//}
 
 /*********************************************/
 /******				getter				******/
@@ -85,8 +82,8 @@ unsigned int ClapTrap::getAttackDamange() const {
 /*********************************************/
 
 void ClapTrap::attack(const std::string &target) {
-	if (getEnergyPoint() == 0 || getHitPoint() == 0)
-		std::cout << getName() << " can't attack " << std::endl;
+	if (energyPoint == 0 || hitPoint == 0)
+		std::cout << name << " can't attack " << std::endl;
 	else {
 		--energyPoint;
 		std::cout << "Claptrap " << name << " attacks " << target

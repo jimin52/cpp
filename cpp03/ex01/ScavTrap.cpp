@@ -26,20 +26,17 @@ void ScavTrap::guardGate() {
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src) {
-	this->name = src.getName();
-	this->setHitPoint(src.getHitPoint());
-	this->setEnergyPoint(src.getEnergyPoint());
-	this->setAttackDamange(src.getAttackDamange());
 	std::cout << "ScavTrap copy constructor called" << std::endl;
+	*this = src;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &rhs) {
 	std::cout << "ScavTrap copy operator called" << std::endl;
 	if (this != &rhs) {
-		this->name = rhs.getName();
-		this->setHitPoint(rhs.getHitPoint());
-		this->setEnergyPoint(rhs.getEnergyPoint());
-		this->setAttackDamange(rhs.getAttackDamange());
+		this->name = rhs.name;
+		this->hitPoint = rhs.hitPoint;
+		this->energyPoint = rhs.energyPoint;
+		this->attackDamange = rhs.attackDamange;
 	}
 	return *this;
 }

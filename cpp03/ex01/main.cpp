@@ -18,10 +18,6 @@ int main( void ) {
 		std::cout << "" << std::endl;
 
 		std::cout << "Function Test:" << std::endl;
-		std::cout << "getName(): " << defaultScav.getName() << std::endl;
-		std::cout << "getEnergy(): " << defaultScav.getEnergyPoint() << std::endl;
-		std::cout << "getHitPoint(): " << defaultScav.getHitPoint() << std::endl;
-		std::cout << "getAttackDamage(): " << defaultScav.getAttackDamange() << std::endl;
 		std::cout << "print(): " << std::endl;
 		defaultScav.print("defaultScav");
 		std::cout << "attack(): " << std::endl;
@@ -54,7 +50,7 @@ int main( void ) {
 	{
 		std::cout << "" << std::endl;
 		std::cout << "*************************************************" << std::endl;
-		std::cout << "*******       Copy operator test         ********" << std::endl;
+		std::cout << "*******      Assign operator test        ********" << std::endl;
 		std::cout << "*************************************************" << std::endl;
 		std::cout << "" << std::endl;
 
