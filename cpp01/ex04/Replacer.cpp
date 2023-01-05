@@ -44,7 +44,7 @@ void Replacer::ReplaceText() {
 
 	OpenInfileStream();
 	OpenOutfileStream();
-	while (!infileStream.eof()) {
+	while (infileStream) {
 		std::getline(infileStream, buffer);
 		if (infileStream.eof())
 			replaceBuffer.append(buffer);
