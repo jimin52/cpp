@@ -22,7 +22,6 @@ ScavTrap::~ScavTrap() {
 
 void ScavTrap::guardGate() {
 	std::cout << "ScavTrap " << name << " enters gatekeeping mode" << std::endl;
-
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src) {

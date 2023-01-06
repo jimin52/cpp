@@ -22,7 +22,7 @@ private:
 public:
 	//	orthodox canonical form
 	ClapTrap();
-	~ClapTrap();
+	virtual ~ClapTrap();
 	ClapTrap(ClapTrap const & src);
 	ClapTrap & operator=(ClapTrap const & rhs);
 
