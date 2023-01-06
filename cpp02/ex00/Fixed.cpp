@@ -19,12 +19,14 @@ Fixed::~Fixed() {
 }
 
 Fixed::Fixed(const Fixed & src) {
+	std::cout << "Fixed copy constructor called" << std::endl;
 	*this = src;
 }
 
 Fixed & Fixed::operator=(const Fixed & src) {
+	std::cout << "Fixed assign constructor called" << std::endl;
 	if (this != &src)
-		setRawBits(src.rawBits);
+		rawBits = src.getRawBits();
 	return *this;
 }
 
@@ -32,7 +34,7 @@ Fixed & Fixed::operator=(const Fixed & src) {
 /******			getter,setter			******/
 /*********************************************/
 
-const int & Fixed::getRawBits() const {
+int Fixed::getRawBits() const {
 	std::cout << "getRawBits member function called" << std::endl;
 	return rawBits;
 }

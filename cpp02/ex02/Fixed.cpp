@@ -23,7 +23,7 @@ Fixed::Fixed(const Fixed & src) {
 
 Fixed & Fixed::operator=(const Fixed & rhs) {
 	if (this != &rhs)
-		setRawBits(rhs._rawBits);
+		_rawBits = rhs.getRawBits();
 	std::cout << "Copy assignment operator Called" << std::endl;
 	return *this;
 }
@@ -47,7 +47,7 @@ Fixed::Fixed(const int & src) {
 /******			getter,setter			******/
 /*********************************************/
 
-const int & Fixed::getRawBits() const {
+int Fixed::getRawBits() const {
 	return _rawBits;
 }
 
@@ -75,6 +75,7 @@ bool Fixed::operator<=(const Fixed &rhs) const {
 bool Fixed::operator>=(const Fixed &rhs) const {
 	return !(*this < rhs);
 }
+
 bool Fixed::operator==(const Fixed &rhs) const {
 	return !(rhs < *this || rhs > *this);
 }
@@ -85,7 +86,6 @@ bool Fixed::operator!=(const Fixed &rhs) const {
 
 Fixed Fixed::operator+(const Fixed &rhs) const {
 	return Fixed(this->toFloat() + rhs.toFloat());
-
 }
 
 Fixed Fixed::operator-(const Fixed &rhs) const {
