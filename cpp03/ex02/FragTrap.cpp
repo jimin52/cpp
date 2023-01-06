@@ -54,7 +54,7 @@ void FragTrap::highFivesGuys() {
 /******			My function				******/
 /*********************************************/
 
-void FragTrap::print(const std::string &variableName) {
+void FragTrap::print(const std::string &variableName) const{
 	std::cout << "FragTrap " << variableName
 			  << " name: " << this->name
 			  << " HitPoint: " << this->hitPoint

@@ -21,7 +21,7 @@ public:
 	void highFivesGuys();
 
 	//	my function
-	void print(const std::string & variableName);
+	virtual void print(const std::string & variableName) const;
 };
 
 

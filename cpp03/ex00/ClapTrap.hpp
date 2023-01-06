@@ -22,10 +22,12 @@ private:
 public:
 	//	orthodox canonical form
 	ClapTrap();
-	explicit ClapTrap(const std::string &name);
 	~ClapTrap();
 	ClapTrap(ClapTrap const & src);
 	ClapTrap & operator=(ClapTrap const & rhs);
+
+	//	constructor
+	explicit ClapTrap(const std::string &name);
 
 	//	required function
 	void attack(const std::string & target);
