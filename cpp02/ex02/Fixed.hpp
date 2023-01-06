@@ -29,7 +29,7 @@ public:
 	explicit Fixed(const float & src);
 
 	//	getter && setter
-	const int & getRawBits() const;
+	int getRawBits() const;
 	void setRawBits( const int & raw );
 
 	//	operator override
