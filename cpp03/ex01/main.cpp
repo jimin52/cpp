@@ -42,6 +42,7 @@ int main( void ) {
 		ScavTrap a("source");
 		ScavTrap b(a);
 
+		a.print("a");
 		b.print("b");
 		a.takeDamage(50);
 		a.print("a");
