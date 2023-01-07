@@ -7,11 +7,15 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 public:
-	explicit ScavTrap(const std::string &name);
+	//	orthodox canonical form
+	ScavTrap();
+	ScavTrap(ScavTrap const & src);
+	ScavTrap & operator=(ScavTrap const & src);
 	~ScavTrap();
 
+	explicit ScavTrap(const std::string &name);
 	void guardGate();
 
 };
