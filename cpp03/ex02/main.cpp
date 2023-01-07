@@ -75,14 +75,16 @@ int main( void ) {
 		std::cout << "*************************************************" << std::endl;
 		std::cout << "" << std::endl;
 
-		FragTrap c1("scav1");
-		FragTrap c2("scav2");
+		FragTrap f1("f1");
+		FragTrap f2("f2");
 
-		c1.attack(c2.getName());
-		c2.takeDamage(c1.getAttackDamange());
-		c1.print("c1");
+		f1.attack(f2.getName());
+		f2.takeDamage(f1.getAttackDamange());
+		f1.print("c1");
 
-		c1.beRepaired(50);
-		c1.print("c1");
+		f1.beRepaired(50);
+		f1.print("c1");
+
+		f1.highFivesGuys();
 	}
 }
