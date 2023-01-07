@@ -4,25 +4,16 @@
 
 #include "ScavTrap.hpp"
 
+/*********************************************/
+/******		orthodox canonical form		******/
+/*********************************************/
 
 ScavTrap::ScavTrap(): ClapTrap() {
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
-	std::cout << "ScavTrap constructor called" << std::endl;
-	hitPoint = 100;
-	energyPoint = 50;
-	attackDamange = 20;
-}
-
 ScavTrap::~ScavTrap() {
 	std::cout << "ScavTrap destructor called" << std::endl;
-}
-
-void ScavTrap::guardGate() {
-	std::cout << "ScavTrap enters gatekeeping mode" << std::endl;
-
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src) {
@@ -41,12 +32,24 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &rhs) {
 	return *this;
 }
 
-void ScavTrap::print(const std::string & variableName) const {
-	std::cout << "ScavTrap " << variableName
-			  << " name: " << name
-			  << " HitPoint: " << hitPoint
-			  << " Energy Point : " << energyPoint
-			  << " attack damage : " << attackDamange << std::endl;
+/*********************************************/
+/******	        Constructor             ******/
+/*********************************************/
+
+ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
+	std::cout << "ScavTrap constructor called" << std::endl;
+	hitPoint = 100;
+	energyPoint = 50;
+	attackDamange = 20;
+}
+
+/*********************************************/
+/******			required function		******/
+/*********************************************/
+
+void ScavTrap::guardGate() {
+	std::cout << "ScavTrap enters gatekeeping mode" << std::endl;
+
 }
 
 void ScavTrap::attack(const std::string &target) {
@@ -58,3 +61,16 @@ void ScavTrap::attack(const std::string &target) {
 		<<" causing " << attackDamange << " points of a damange!" << std::endl;
 	}
 }
+
+/*********************************************/
+/******			My function				******/
+/*********************************************/
+
+void ScavTrap::print(const std::string & variableName) const {
+	std::cout << "ScavTrap " << variableName
+			  << " name: " << name
+			  << " HitPoint: " << hitPoint
+			  << " Energy Point : " << energyPoint
+			  << " attack damage : " << attackDamange << std::endl;
+}
+

@@ -12,10 +12,6 @@ ClapTrap::ClapTrap(): hitPoint(0), energyPoint(0), attackDamange(0) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string &name) : name(name), hitPoint(10), energyPoint(10), attackDamange(0) {
-	std::cout << "Claptrap " << name << " constructor called" << std::endl;
-}
-
 ClapTrap::~ClapTrap() {
 	std::cout << "Claptrap " << name << " destructor called" << std::endl;
 }
@@ -34,6 +30,14 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
 		attackDamange = rhs.getAttackDamange();
 	}
 	return *this;
+}
+
+/*********************************************/
+/******	        Constructor             ******/
+/*********************************************/
+
+ClapTrap::ClapTrap(const std::string &name) : name(name), hitPoint(10), energyPoint(10), attackDamange(0) {
+	std::cout << "Claptrap " << name << " constructor called" << std::endl;
 }
 
 /*********************************************/

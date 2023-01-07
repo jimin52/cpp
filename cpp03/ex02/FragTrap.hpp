@@ -14,7 +14,7 @@ public:
 	FragTrap();
 	FragTrap(const FragTrap &src);
 	FragTrap &operator=(FragTrap const & rhs);
-	~FragTrap();
+	virtual ~FragTrap();
 
 	//	constructor
 	explicit FragTrap(const std::string &name);

@@ -20,13 +20,6 @@ FragTrap::FragTrap(const FragTrap & src) : ClapTrap(src) {
 	this->attackDamange = src.attackDamange;
 }
 
-FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
-	std::cout << "FragTrap " << name << " constructor called" << std::endl;
-	hitPoint = 100;
-	energyPoint = 100;
-	attackDamange = 30;
-}
-
 FragTrap &FragTrap::operator=(FragTrap const &rhs) {
 	std::cout << "FragTrap copy operator called" << std::endl;
 	if (this != &rhs) {
@@ -40,6 +33,17 @@ FragTrap &FragTrap::operator=(FragTrap const &rhs) {
 
 FragTrap::~FragTrap() {
 	std::cout << "FragTrap " << name << " destroctor called" << std::endl;
+}
+
+/*********************************************/
+/******	        Constructor             ******/
+/*********************************************/
+
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
+	std::cout << "FragTrap " << name << " constructor called" << std::endl;
+	hitPoint = 100;
+	energyPoint = 100;
+	attackDamange = 30;
 }
 
 /*********************************************/

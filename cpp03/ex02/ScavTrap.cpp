@@ -4,49 +4,73 @@
 
 #include "ScavTrap.hpp"
 
+/*********************************************/
+/******		orthodox canonical form		******/
+/*********************************************/
 
 ScavTrap::ScavTrap(): ClapTrap() {
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
-	hitPoint = 100;
-	energyPoint = 50;
-	attackDamange = 20;
-	std::cout << "ScavTrap " << name << " constructor called" << std::endl;
-}
-
 ScavTrap::~ScavTrap() {
-	std::cout << "ScavTrap " << getName() << " destructor called" << std::endl;
-}
-
-void ScavTrap::guardGate() {
-	std::cout << "ScavTrap " << name << " enters gatekeeping mode" << std::endl;
+	std::cout << "ScavTrap destructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src) {
-	this->name = src.getName();
-	this->setHitPoint(src.getHitPoint());
-	this->setEnergyPoint(src.getEnergyPoint());
-	this->setAttackDamange(src.getAttackDamange());
 	std::cout << "ScavTrap copy constructor called" << std::endl;
+	*this = src;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &rhs) {
 	std::cout << "ScavTrap copy operator called" << std::endl;
 	if (this != &rhs) {
-		this->name = rhs.getName();
-		this->setHitPoint(rhs.getHitPoint());
-		this->setEnergyPoint(rhs.getEnergyPoint());
-		this->setAttackDamange(rhs.getAttackDamange());
+		name = rhs.getName();
+		hitPoint = rhs.hitPoint;
+		energyPoint = rhs.getEnergyPoint();
+		attackDamange = rhs.getAttackDamange();
 	}
 	return *this;
 }
 
+/*********************************************/
+/******	        Constructor             ******/
+/*********************************************/
+
+ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
+	std::cout << "ScavTrap constructor called" << std::endl;
+	hitPoint = 100;
+	energyPoint = 50;
+	attackDamange = 20;
+}
+
+/*********************************************/
+/******			required function		******/
+/*********************************************/
+
+void ScavTrap::guardGate() {
+	std::cout << "ScavTrap enters gatekeeping mode" << std::endl;
+
+}
+
+void ScavTrap::attack(const std::string &target) {
+	if (energyPoint == 0 || hitPoint == 0)
+		std::cout << name << " can't attack " << std::endl;
+	else {
+		--energyPoint;
+		std::cout << "Scavtrap " << name << " attacks " << target
+		<<" causing " << attackDamange << " points of a damange!" << std::endl;
+	}
+}
+
+/*********************************************/
+/******			My function				******/
+/*********************************************/
+
 void ScavTrap::print(const std::string & variableName) const {
 	std::cout << "ScavTrap " << variableName
-			  << " name: " << this->name
-			  << " HitPoint: " << this->hitPoint
-			  << " Energy Point : " << this->energyPoint
-			  << " attack damage : " << this->attackDamange << std::endl;
+			  << " name: " << name
+			  << " HitPoint: " << hitPoint
+			  << " Energy Point : " << energyPoint
+			  << " attack damage : " << attackDamange << std::endl;
 }
+

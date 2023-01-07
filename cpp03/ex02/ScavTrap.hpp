@@ -13,14 +13,19 @@ class ScavTrap : public ClapTrap {
 public:
 	//	orthodox canonical form
 	ScavTrap();
-	explicit ScavTrap(const std::string &name);
-	~ScavTrap();
+	virtual ~ScavTrap();
 	ScavTrap(const ScavTrap &src);
 	ScavTrap &operator=(const ScavTrap &rhs);
 
+	//	constructor
+	explicit ScavTrap(const std::string &name);
+
 	// required function
 	void guardGate();
-	void print(const std::string & variableName) const;
+	virtual void attack(const std::string &target);
+
+	//	my function
+	virtual void print(const std::string & variableName) const;
 };
 
 #endif //CPP_SCAVTRAP_HPP
