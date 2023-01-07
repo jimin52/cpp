@@ -15,14 +15,13 @@ private:
 	unsigned int energyPoint;
 	unsigned int attackDamange;
 
-
 	//	my function
 	unsigned int getSafeDamageInput(unsigned int amount) const;
 
 public:
 	//	orthodox canonical form
 	ClapTrap();
-	~ClapTrap();
+	virtual ~ClapTrap();
 	ClapTrap(ClapTrap const & src);
 	ClapTrap & operator=(ClapTrap const & rhs);
 
@@ -35,10 +34,10 @@ public:
 	void beRepaired(const unsigned int & amount);
 
 	//	getter
-	const std::string & getName() const;
-	const unsigned int & getHitPoint() const;
-	const unsigned int & getEnergyPoint() const;
-	const unsigned int & getAttackDamange() const;
+	std::string getName() const;
+	unsigned int getHitPoint() const;
+	unsigned int getEnergyPoint() const;
+	unsigned int getAttackDamange() const;
 
 	//	my function
 	virtual void print(const std::string & variableName) const;

@@ -22,15 +22,10 @@ int main( void ) {
 		defaultScav.print("defaultScav");
 		std::cout << "attack(): " << std::endl;
 		defaultScav.attack("whoever");
-		std::cout << "takeDamage():" << std::endl;
-		defaultScav.takeDamage(100);
-		std::cout << "beRepaired():" << std::endl;
-		defaultScav.beRepaired(20);
 		std::cout << "gateGuard():" << std::endl;
 		defaultScav.guardGate();
 		std::cout << "" << std::endl;
 
-		std::cout << "" << std::endl;
 	}
 	{
 		std::cout << "" << std::endl;
@@ -61,6 +56,7 @@ int main( void ) {
 		a.print("a");
 		b.print("b");
 		b = a;
+		a.print("a");
 		b.print("b");
 
 	}
@@ -71,14 +67,14 @@ int main( void ) {
 		std::cout << "*************************************************" << std::endl;
 		std::cout << "" << std::endl;
 
-		ScavTrap c1("scav1");
-		ScavTrap c2("scav2");
+		ScavTrap s1("s1");
+		ClapTrap c2("c1");
 
-		c1.attack(c2.getName());
-		c2.takeDamage(c1.getAttackDamange());
-		c1.print("c1");
+		s1.attack(c2.getName());
+		c2.takeDamage(s1.getAttackDamange());
+		s1.print("s1");
 
-		c1.beRepaired(50);
-		c1.print("c1");
+		s1.beRepaired(50);
+		s1.print("s1");
 	}
 }

@@ -8,10 +8,7 @@
 /******		orthodox canonical form		******/
 /*********************************************/
 
-ClapTrap::ClapTrap() {
-	hitPoint = 0;
-	energyPoint = 0;
-	attackDamange = 0;
+ClapTrap::ClapTrap(): hitPoint(0), energyPoint(0), attackDamange(0) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
@@ -24,39 +21,19 @@ ClapTrap::~ClapTrap() {
 }
 
 ClapTrap::ClapTrap(ClapTrap const &src) {
-	std::cout << "ClapTrap Copy constructor called" << std::endl;
-	this->name = src.name;
-	this->hitPoint = src.hitPoint;
-	this->energyPoint = src.energyPoint;
-	this->attackDamange = src.attackDamange;
+	std::cout << "Copy constructor called" << std::endl;
+	*this = src;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
 	std::cout << "ClapTrap copy operator called" << std::endl;
 	if (this != &rhs) {
-		this->name = rhs.getName();
-		this->setHitPoint(rhs.getHitPoint());
-		this->setEnergyPoint(rhs.getEnergyPoint());
-		this->setAttackDamange(rhs.getAttackDamange());
+		name = rhs.name;
+		hitPoint = rhs.getHitPoint();
+		energyPoint = rhs.getEnergyPoint();
+		attackDamange = rhs.getAttackDamange();
 	}
 	return *this;
-}
-
-/*********************************************/
-/******				setter				******/
-/*********************************************/
-
-void ClapTrap::setEnergyPoint(unsigned int energyPoint) {
-	ClapTrap::energyPoint = energyPoint;
-}
-
-
-void ClapTrap::setHitPoint(unsigned int hitPoint) {
-	ClapTrap::hitPoint = hitPoint;
-}
-
-void ClapTrap::setAttackDamange(unsigned int attackDamange) {
-	ClapTrap::attackDamange = attackDamange;
 }
 
 /*********************************************/
@@ -64,7 +41,7 @@ void ClapTrap::setAttackDamange(unsigned int attackDamange) {
 /*********************************************/
 
 
-const std::string &ClapTrap::getName() const {
+std::string ClapTrap::getName() const {
 	return name;
 }
 
@@ -85,8 +62,8 @@ unsigned int ClapTrap::getAttackDamange() const {
 /*********************************************/
 
 void ClapTrap::attack(const std::string &target) {
-	if (getEnergyPoint() == 0 || getHitPoint() == 0)
-		std::cout << getName() << " can't attack " << std::endl;
+	if (energyPoint == 0 || hitPoint == 0)
+		std::cout << name << " can't attack " << std::endl;
 	else {
 		--energyPoint;
 		std::cout << "Claptrap " << name << " attacks " << target
@@ -124,10 +101,10 @@ void ClapTrap::beRepaired(unsigned int amount) {
 
 void ClapTrap::print(const std::string & variableName) const {
 	std::cout << "ClapTrap " << variableName
-		<< " name: " << this->name
-		<< " HitPoint: " << this->hitPoint
-		<< " Energy Point : " << this->energyPoint
-		<< " attack damage : " << this->attackDamange << std::endl;
+		<< " name: " << name
+		<< " HitPoint: " << hitPoint
+		<< " Energy Point : " << energyPoint
+		<< " attack damage : " << attackDamange << std::endl;
 }
 
 unsigned int ClapTrap::getSafeDamageInput(unsigned int amount) const {

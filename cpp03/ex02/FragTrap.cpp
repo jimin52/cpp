@@ -30,10 +30,10 @@ FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
 FragTrap &FragTrap::operator=(FragTrap const &rhs) {
 	std::cout << "FragTrap copy operator called" << std::endl;
 	if (this != &rhs) {
-		this->name = rhs.name;
-		this->hitPoint = rhs.hitPoint;
-		this->energyPoint = rhs.energyPoint;
-		this->attackDamange = rhs.attackDamange;
+		name = rhs.getName();
+		hitPoint = rhs.getHitPoint();
+		energyPoint = rhs.getEnergyPoint();
+		attackDamange = rhs.getAttackDamange();
 	}
 	return *this;
 }
@@ -56,8 +56,8 @@ void FragTrap::highFivesGuys() {
 
 void FragTrap::print(const std::string &variableName) const{
 	std::cout << "FragTrap " << variableName
-			  << " name: " << this->name
-			  << " HitPoint: " << this->hitPoint
-			  << " Energy Point : " << this->energyPoint
-			  << " attack damage : " << this->attackDamange << std::endl;
+			  << " name: " << name
+			  << " HitPoint: " << hitPoint
+			  << " Energy Point : " << energyPoint
+			  << " attack damage : " << attackDamange << std::endl;
 }

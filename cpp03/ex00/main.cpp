@@ -43,6 +43,9 @@ int main( void ) {
 		ClapTrap b(a);
 		a.print("a");
 		b.print("b");
+		a.takeDamage(5);
+		a.print("a");
+		b.print("b");
 	}
 	{
 		std::cout << "" << std::endl;
@@ -64,7 +67,7 @@ int main( void ) {
 	{
 		std::cout << std::endl;
 		std::cout << "*************************************************" << std::endl;
-		std::cout << "*******   ClapTrap attack repaire test   ********" << std::endl;
+		std::cout << "*******   ClapTrap attack repair test    ********" << std::endl;
 		std::cout << "*************************************************" << std::endl;
 		std::cout << std::endl;
 
@@ -78,15 +81,19 @@ int main( void ) {
 		c1.attack(c2.getName());
 		c2.takeDamage(c1.getAttackDamange());
 		c1.print("c1");
+		c2.print("c2");
 
 		std::cout << std::endl;
 
 		c1.beRepaired(50);
 		c1.print("c1");
 
+		std::cout << std::endl;
+
+		c1.print("c1");
 		c2.print("c2");
 		c2 = c1;
+		c1.print("c1");
 		c2.print("c2");
-
 	}
 }

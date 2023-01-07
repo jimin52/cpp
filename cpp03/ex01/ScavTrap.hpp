@@ -22,7 +22,8 @@ public:
 
 	// required function
 	void guardGate();
-	void print(const std::string & variableName) const;
+	virtual void print(const std::string & variableName) const;
+	virtual void attack(const std::string &target);
 };
 
 #endif //CPP_SCAVTRAP_HPP

@@ -8,10 +8,7 @@
 /******		orthodox canonical form		******/
 /*********************************************/
 
-ClapTrap::ClapTrap() {
-	hitPoint = 0;
-	energyPoint = 0;
-	attackDamange = 0;
+ClapTrap::ClapTrap(): hitPoint(0), energyPoint(0), attackDamange(0) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
@@ -31,37 +28,20 @@ ClapTrap::ClapTrap(ClapTrap const &src) {
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs) {
 	std::cout << "ClapTrap copy operator called" << std::endl;
 	if (this != &rhs) {
-		this->name = rhs.name;
-		this->hitPoint = rhs.hitPoint;
-		this->energyPoint = rhs.energyPoint;
-		this->attackDamange = rhs.attackDamange;
+		name = rhs.name;
+		hitPoint = rhs.getHitPoint();
+		energyPoint = rhs.getEnergyPoint();
+		attackDamange = rhs.getAttackDamange();
 	}
 	return *this;
 }
-
-/*********************************************/
-/******				setter				******/
-/*********************************************/
-
-//void ClapTrap::setEnergyPoint(unsigned int energyPoint) {
-	//ClapTrap::energyPoint = energyPoint;
-//}
-
-
-//void ClapTrap::setHitPoint(unsigned int hitPoint) {
-	//ClapTrap::hitPoint = hitPoint;
-//}
-
-//void ClapTrap::setAttackDamange(unsigned int attackDamange) {
-	//ClapTrap::attackDamange = attackDamange;
-//}
 
 /*********************************************/
 /******				getter				******/
 /*********************************************/
 
 
-const std::string &ClapTrap::getName() const {
+std::string ClapTrap::getName() const {
 	return name;
 }
 
@@ -121,10 +101,10 @@ void ClapTrap::beRepaired(unsigned int amount) {
 
 void ClapTrap::print(const std::string & variableName) const {
 	std::cout << "ClapTrap " << variableName
-		<< " name: " << this->name
-		<< " HitPoint: " << this->hitPoint
-		<< " Energy Point : " << this->energyPoint
-		<< " attack damage : " << this->attackDamange << std::endl;
+		<< " name: " << name
+		<< " HitPoint: " << hitPoint
+		<< " Energy Point : " << energyPoint
+		<< " attack damage : " << attackDamange << std::endl;
 }
 
 unsigned int ClapTrap::getSafeDamageInput(unsigned int amount) const {
