@@ -12,19 +12,22 @@ Animal::~Animal() {
 	std::cout << "Animal destructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &src) {
+Animal::Animal(const Animal &src): type(src.getType()){
 	std::cout << "Animal copy constructor called" << std::endl;
-	*this = src;
 }
 
 Animal &Animal::operator=(const Animal &rhs) {
 	std::cout << "Animal operator= called" << std::endl;
 	if (this != &rhs)
-		this->type = rhs.type;
+		type = rhs.getType();
 	return *this;
 }
 
-const std::string &Animal::getType() const {
+Animal::Animal(std::string type): type(type) {
+	std::cout << "Animal default constructor called" << std::endl;
+}
+
+std::string Animal::getType() const {
 	return type;
 }
 

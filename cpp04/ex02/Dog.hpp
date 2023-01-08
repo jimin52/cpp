@@ -5,13 +5,16 @@
 #ifndef CPP_DOG_HPP
 #define CPP_DOG_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class Dog : public Animal{
+class Dog : public AAnimal{
 private:
+
 	Brain* _brain;
+
 public:
-	Dog(const Animal &src);
+
 	Dog();
 	Dog &operator=(const Dog & rhs);
 	Dog(const Dog &src);

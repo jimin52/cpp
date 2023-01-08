@@ -12,9 +12,12 @@
 
 class AAnimal {
 protected:
+
 	std::string type;
+	explicit AAnimal(std::string type);
 
 public:
+
 	//	orthodox canonical form;
 	AAnimal();
 	AAnimal(const AAnimal & src);
@@ -25,7 +28,7 @@ public:
 	virtual void makeSound() const = 0;
 
 	//	getter
-	const std::string &getType() const;
+	std::string getType() const;
 };
 
 

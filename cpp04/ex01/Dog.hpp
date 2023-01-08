@@ -6,16 +6,19 @@
 #define CPP_DOG_HPP
 
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal{
 private:
+
 	Brain* _brain;
+
 public:
-	Dog(const Animal &src);
+
 	Dog();
-	Dog &operator=(const Dog & rhs);
 	Dog(const Dog &src);
-	~Dog();
+	Dog &operator=(const Dog & rhs);
+	virtual ~Dog();
 
 	void makeSound() const;
 };

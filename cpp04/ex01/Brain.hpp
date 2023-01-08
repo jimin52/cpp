@@ -9,12 +9,17 @@
 
 class Brain {
 private:
+
 	std::string ideas[100];
+
 public:
+
+	//	orthodox canonical form
 	Brain();
 	Brain(const Brain & src);
 	virtual ~Brain();
 	Brain &operator=(const Brain & rhs);
+
 };
 
 

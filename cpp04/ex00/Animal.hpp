@@ -9,9 +9,12 @@
 
 class Animal {
 protected:
+
 	std::string type;
+	explicit Animal(std::string type);
 
 public:
+
 	//	orthodox canonical form;
 	Animal();
 	Animal(const Animal & src);
@@ -22,7 +25,8 @@ public:
 	virtual void makeSound() const;
 
 	//	getter
-	const std::string &getType() const;
+	std::string getType() const;
+
 };
 
 

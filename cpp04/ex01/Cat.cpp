@@ -10,7 +10,7 @@ Cat::Cat() : Animal(){
 	_brain = new Brain();
 }
 
-Cat::Cat(const Cat &src) : Animal(src) {
+Cat::Cat(const Cat &src) : Animal(src.getType()) {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = src;
 }
@@ -18,6 +18,7 @@ Cat::Cat(const Cat &src) : Animal(src) {
 Cat &Cat::operator=(const Cat &rhs) {
 	std::cout << "Cat operator= called" << std::endl;
 	if (this != &rhs) {
+		Animal::operator=(rhs);
 		*_brain = *rhs._brain;
 	}
 	return *this;

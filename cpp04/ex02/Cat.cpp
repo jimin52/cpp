@@ -4,13 +4,13 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal(){
+Cat::Cat() : AAnimal(){
 	std::cout << "Cat constructor called" << std::endl;
 	type = "Cat";
 	_brain = new Brain();
 }
 
-Cat::Cat(const Cat &src) : Animal(src) {
+Cat::Cat(const Cat &src) : AAnimal(src) {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = src;
 }

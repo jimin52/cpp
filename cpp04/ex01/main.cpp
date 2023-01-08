@@ -49,6 +49,19 @@ int main() {
 
 		delete i;
 		delete j;
+		system("leaks main");
+	}
+	{
+		std::cout << "" << std::endl;
+		std::cout << "*************************************************" << std::endl;
+		std::cout << "*******         Cat Dog test             ********" << std::endl;
+		std::cout << "*************************************************" << std::endl;
+		std::cout << "" << std::endl;
+
+//		Cat c;
+//		Dog d1(c);
+//		Cog d2 = c;
+
 	}
 	return 0;
 }

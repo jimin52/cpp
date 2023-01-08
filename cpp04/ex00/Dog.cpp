@@ -4,24 +4,22 @@
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal() {
+Dog::Dog() : Animal("Dog") {
 	std::cout << "Dog constructor called" << std::endl;
-	this->type = "Dog";
 }
 
 Dog::~Dog() {
 	std::cout << "Dog destructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &src) : Animal(src){
+Dog::Dog(const Dog &src) : Animal(src.getType()){
 	std::cout << "Dog copy constructor called" << std::endl;
-	*this = src;
 }
 
 Dog &Dog::operator=(const Dog &rhs) {
 	std::cout << "Dog operator= called" << std::endl;
 	if (this != &rhs)
-		this->type = rhs.type;
+		Animal::operator=(rhs);
 	return *this;
 }
 

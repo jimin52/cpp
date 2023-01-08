@@ -6,11 +6,12 @@
 #define CPP_ANIMAL_HPP
 
 #include <iostream>
-#include "Brain.hpp"
 
 class Animal {
 protected:
+
 	std::string type;
+	explicit Animal(std::string type);
 
 public:
 	//	orthodox canonical form;
@@ -23,7 +24,7 @@ public:
 	virtual void makeSound() const;
 
 	//	getter
-	const std::string &getType() const;
+	std::string getType() const;
 };
 
 

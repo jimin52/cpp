@@ -19,9 +19,7 @@ Brain::Brain(const Brain &src) {
 
 Brain &Brain::operator=(const Brain &rhs) {
 	std::cout << "Brain operator= called" << std::endl;
-	if (this != &rhs) {
-		for(int i = 0; i < 100; i++)
-			ideas[i] = rhs.ideas[i];
-	}
+	if (this != &rhs)
+		std::copy(rhs.ideas, (rhs.ideas) + 100, ideas);
 	return *this;
 }
