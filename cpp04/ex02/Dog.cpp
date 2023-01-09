@@ -7,7 +7,7 @@
 Dog::Dog() : AAnimal() {
 	std::cout << "Dog constructor called" << std::endl;
 	this->type = "Dog";
-	this->_brain = new Brain;
+	this->_brain = new Brain();
 }
 
 Dog::~Dog() {
@@ -23,11 +23,14 @@ Dog::Dog(const Dog &src) : AAnimal(src){
 Dog &Dog::operator=(const Dog &rhs) {
 	std::cout << "Dog operator= called" << std::endl;
 	if (this != &rhs) {
-		*_brain = *rhs._brain;
+		if (_brain)
+			*_brain = *rhs._brain;
+		else
+			_brain = new Brain(*rhs._brain);
 	}
 	return *this;
 }
 
-void Dog::makeSound() const{
+void Dog::makeSound() const {
 	std::cout << "bark bark" << std::endl;
 }

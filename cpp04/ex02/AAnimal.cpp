@@ -5,7 +5,7 @@
 #include "AAnimal.hpp"
 
 AAnimal::AAnimal() {
-	std::cout << "Animal default constructor called" << std::endl;
+	std::cout << "AAnimal default constructor called" << std::endl;
 }
 
 AAnimal::~AAnimal() {
@@ -24,7 +24,7 @@ AAnimal &AAnimal::operator=(const AAnimal &rhs) {
 }
 
 AAnimal::AAnimal(std::string type): type(type) {
-	std::cout << "Animal default constructor called" << std::endl;
+	std::cout << "AAnimal constructor called" << std::endl;
 }
 
 std::string AAnimal::getType() const {

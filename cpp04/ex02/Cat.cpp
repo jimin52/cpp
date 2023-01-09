@@ -4,21 +4,24 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() : AAnimal(){
+Cat::Cat() : AAnimal("Cat"), _brain(new Brain){
 	std::cout << "Cat constructor called" << std::endl;
-	type = "Cat";
-	_brain = new Brain();
 }
 
 Cat::Cat(const Cat &src) : AAnimal(src) {
 	std::cout << "Cat copy constructor called" << std::endl;
-	*this = src;
+	if (this != &src) {
+		*_brain = *src._brain;
+	}
 }
 
 Cat &Cat::operator=(const Cat &rhs) {
 	std::cout << "Cat operator= called" << std::endl;
 	if (this != &rhs) {
-		*_brain = *rhs._brain;
+		if (_brain)
+			*_brain = *rhs._brain;
+		else
+			_brain = new Brain(*rhs._brain);
 	}
 	return *this;
 }

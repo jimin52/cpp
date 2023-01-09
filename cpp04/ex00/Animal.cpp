@@ -4,7 +4,7 @@
 
 #include "Animal.hpp"
 
-Animal::Animal() {
+Animal::Animal(): type("animal") {
 	std::cout << "Animal default constructor called" << std::endl;
 }
 
@@ -12,14 +12,15 @@ Animal::~Animal() {
 	std::cout << "Animal destructor called" << std::endl;
 }
 
-Animal::Animal(const Animal &src): type(src.getType()){
+Animal::Animal(const Animal &src): type(src.getType()) {
 	std::cout << "Animal copy constructor called" << std::endl;
 }
 
 Animal &Animal::operator=(const Animal &rhs) {
 	std::cout << "Animal operator= called" << std::endl;
-	if (this != &rhs)
+	if (this != &rhs) {
 		type = rhs.getType();
+	}
 	return *this;
 }
 

@@ -9,27 +9,28 @@
 
 int main() {
 	{
-		std::cout << "" << std::endl;
+		std::cout << std::endl;
 		std::cout << "*************************************************" << std::endl;
 		std::cout << "*******           Subject test           ********" << std::endl;
 		std::cout << "*************************************************" << std::endl;
-		std::cout << "" << std::endl;
+		std::cout << std::endl;
 		const Animal *i = new Dog();
 		const Animal *j = new Cat();
 		delete i;//should not create a leak
 		delete j;
 	}
 	{
-		std::cout << "" << std::endl;
+		std::cout << std::endl;
 		std::cout << "*************************************************" << std::endl;
 		std::cout << "*******           Subject test2          ********" << std::endl;
 		std::cout << "*************************************************" << std::endl;
-		std::cout << "" << std::endl;
+		std::cout << std::endl;
 		Animal* animalArr[4];
 		animalArr[0] = new Dog();
 		animalArr[1] = new Dog();
 		animalArr[2] = new Cat();
 		animalArr[3] = new Cat();
+		std::cout << std::endl;
 		delete animalArr[0];
 		delete animalArr[1];
 		delete animalArr[2];

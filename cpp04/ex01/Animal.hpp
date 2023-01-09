@@ -9,15 +9,17 @@
 
 class Animal {
 protected:
+
 	std::string type;
+
 	explicit Animal(std::string type);
+	Animal(const Animal & src);
+	Animal &operator=(const Animal & rhs);
 
 public:
 	//	orthodox canonical form;
 	Animal();
-	Animal(const Animal & src);
 	virtual ~Animal();
-	Animal &operator=(const Animal & rhs);
 
 	//	requested function
 	virtual void makeSound() const;
