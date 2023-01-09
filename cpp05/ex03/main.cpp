@@ -12,55 +12,59 @@
 
 int main( void ) {
 	{
+		Intern i1;
 		std::cout << "" << std::endl;
 		std::cout << "*************************************************" << std::endl;
 		std::cout << "*******          intern test             ********" << std::endl;
 		std::cout << "*************************************************" << std::endl;
 		std::cout << "" << std::endl;
+
 		try {
-			Bureaucrat b1("seongyle", 5);
-			Intern i1;
+			Bureaucrat seongyle("seongyle", 5);
 
 			Form* f1;
 			f1 = i1.makeForm("presidential pardon", "abcd");
-			b1.signForm(*f1);
-			b1.executeForm(*f1);
+			seongyle.signForm(*f1);
+			seongyle.executeForm(*f1);
 
 		} catch (std::exception &e) {
 			std::cout << e.what();
 		}
+
+		std::cout << "" << std::endl;
 		try {
-			Bureaucrat b1("ywee", 5);
-			Intern i1;
+			Bureaucrat ywee("ywee", 5);
 
 			Form* f1;
 			f1 = i1.makeForm("robotomy request", "1234");
-			b1.signForm(*f1);
-			b1.executeForm(*f1);
+			ywee.signForm(*f1);
+			ywee.executeForm(*f1);
 
 		} catch (std::exception &e) {
 			std::cout << e.what();
 		}
+
+		std::cout << "" << std::endl;
 		try {
-			Bureaucrat b1("jaekim", 5);
-			Intern i1;
+			Bureaucrat jaekim("jaekim", 5);
 
 			Form* f1;
 			f1 = i1.makeForm("shrubbery creation", "tree");
-			b1.signForm(*f1);
-			b1.executeForm(*f1);
+			jaekim.signForm(*f1);
+			jaekim.executeForm(*f1);
 
 		} catch (std::exception &e) {
 			std::cout << e.what();
 		}
+
+		std::cout << "" << std::endl;
 		try {
-			Bureaucrat b1("jimin", 5);
-			Intern i1;
+			Bureaucrat jimin("jimin", 5);
 
 			Form* f1;
 			f1 = i1.makeForm("wrong name", "wrong");
-			b1.signForm(*f1);
-			b1.executeForm(*f1);
+			jimin.signForm(*f1);
+			jimin.executeForm(*f1);
 
 		} catch (std::exception &e) {
 			std::cout << e.what();

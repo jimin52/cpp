@@ -18,7 +18,7 @@ int main( void ) {
 			Bureaucrat b1("jimin", 30);
 			Form f1("homework", 40, 40);
 			Form f2("cpp08", 20, 20);
-			Form f3("ddak", 30, 30);
+			Form f3("과제", 30, 30);
 
 			b1.signForm(f1);
 			b1.signForm(f2);

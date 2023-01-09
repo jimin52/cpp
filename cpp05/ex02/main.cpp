@@ -17,10 +17,10 @@ int main( void ) {
 		std::cout << "*************************************************" << std::endl;
 		std::cout << "" << std::endl;
 		try {
-			Bureaucrat b1("jimin", 10);
+			Bureaucrat jimin("jimin", 10);
 			ShrubberyCreationForm s1("abcd");
-			b1.signForm(s1);
-			b1.executeForm(s1);
+			jimin.signForm(s1);
+			jimin.executeForm(s1);
 
 
 		} catch (std::exception &e) {
@@ -34,10 +34,35 @@ int main( void ) {
 		std::cout << "*************************************************" << std::endl;
 		std::cout << "" << std::endl;
 		try {
-			Bureaucrat b1("jimin", 3);
+			Bureaucrat jimin("jimin", 3);
 			PresidentialPardonForm p1("abcd");
-			b1.signForm(p1);
-			b1.executeForm(p1);
+			jimin.signForm(p1);
+			jimin.executeForm(p1);
+
+
+		} catch (std::exception &e) {
+			std::cout << e.what() << std::endl;
+		}
+	}
+	{
+		std::cout << "" << std::endl;
+		std::cout << "*************************************************" << std::endl;
+		std::cout << "*******            RRF test              ********" << std::endl;
+		std::cout << "*************************************************" << std::endl;
+		std::cout << "" << std::endl;
+		try {
+			Bureaucrat jimin("jimin", 3);
+			RobotomyRequestForm r1("abcd");
+			jimin.signForm(r1);
+			jimin.executeForm(r1);
+			jimin.executeForm(r1);
+			jimin.executeForm(r1);
+			jimin.executeForm(r1);
+			jimin.executeForm(r1);
+			jimin.executeForm(r1);
+			jimin.executeForm(r1);
+			jimin.executeForm(r1);
+			jimin.executeForm(r1);
 
 
 		} catch (std::exception &e) {

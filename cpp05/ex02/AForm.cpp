@@ -49,7 +49,7 @@ Form::Form(const std::string &name,
 /******				getter				******/
 /*********************************************/
 
-const std::string &Form::getName() const {
+std::string Form::getName() const {
 	return name;
 }
 
@@ -57,11 +57,11 @@ bool Form::isSign() const {
 	return sign;
 }
 
-const int Form::getSignGrade() const {
+int Form::getSignGrade() const {
 	return signGrade;
 }
 
-const int Form::getExecGrade() const {
+int Form::getExecGrade() const {
 	return execGrade;
 }
 

@@ -30,10 +30,10 @@ public:
 	Form(const std::string &name, const int signGrade, const int execGrade);
 
 	//	getter
-	const std::string &getName() const;
+	std::string getName() const;
 	bool isSign() const;
-	const int getSignGrade() const;
-	const int getExecGrade() const;
+	int getSignGrade() const;
+	int getExecGrade() const;
 
 	//	exception classes
 	class GradeTooHighException : public std::exception {

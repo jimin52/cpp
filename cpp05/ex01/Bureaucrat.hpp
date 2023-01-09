@@ -18,13 +18,13 @@ private:
 	int	grade;
 
 	//	orthodox canonical form
+	Bureaucrat();
 	Bureaucrat& operator=(const Bureaucrat & rhs);
+	Bureaucrat(const Bureaucrat & src);
 
 public:
 	//	orthodox canonical form
-	Bureaucrat();
 	virtual ~Bureaucrat();
-	Bureaucrat(const Bureaucrat & src);
 
 	//	my constructor
 	Bureaucrat(const std::string &name, int grade);

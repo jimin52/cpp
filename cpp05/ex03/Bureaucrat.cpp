@@ -48,7 +48,7 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name) {
 /******				getter				******/
 /*********************************************/
 
-const std::string &Bureaucrat::getName() const {
+std::string Bureaucrat::getName() const {
 	return name;
 }
 
@@ -74,11 +74,7 @@ void Bureaucrat::gradeDecrement(int value) {
 		grade += value;
 }
 
-void Bureaucrat::signForm(Form &form) {
-	if (&form == NULL) {
-		std::cerr<< "Input Form is nullptr" << std::endl;
-		return;
-	}
+void Bureaucrat::signForm(Form & form) {
 	if (form.beSigned(*this) == true) {
 		std::cout << name << " signed " << form.getName() << std::endl;
 	} else {
@@ -86,11 +82,7 @@ void Bureaucrat::signForm(Form &form) {
 	}
 }
 
-void Bureaucrat::executeForm(Form const &form) {
-	if (&form == NULL) {
-		std::cerr<< "Input Form is nullptr" << std::endl;
-		return;
-	}
+void Bureaucrat::executeForm(Form const & form) {
 	try {
 		form.execute(*this);
 		std::cout << name << " executed " << form.getName() << std::endl;

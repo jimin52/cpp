@@ -12,6 +12,7 @@ class Bureaucrat;
 
 class Form {
 private:
+
 	const std::string	name;
 	bool	sign;
 	const int	signGrade;
@@ -19,19 +20,20 @@ private:
 
 	//	orthodox canonical form
 	Form & operator=(const Form &rhs);
+	Form(const Form & src);
+
 public:
 	//	orthodox canonical form
 	Form();
-	Form(const Form & src);
 	virtual ~Form();
 
 	Form(const std::string &name, const int signGrade, const int execGrade);
 
 	//	getter
-	const std::string &getName() const;
+	std::string getName() const;
 	bool isSign() const;
-	const int getSignGrade() const;
-	const int getExecGrade() const;
+	int getSignGrade() const;
+	int getExecGrade() const;
 
 	//	exception classes
 	class GradeTooHighException : public std::exception {

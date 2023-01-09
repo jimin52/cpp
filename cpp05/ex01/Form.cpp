@@ -23,8 +23,7 @@ Form::Form(const Form &src) : name(src.name), sign(src.sign), signGrade(src.sign
 
 Form &Form::operator=(const Form &rhs) {
 	std::cout << "Form operator= called" << std::endl;
-	this->~Form();
-	new (this) Form(rhs);
+	(void ) rhs;
 	return *this;
 }
 
@@ -51,7 +50,7 @@ Form::Form(const std::string &name,
 /******				getter				******/
 /*********************************************/
 
-const std::string &Form::getName() const {
+std::string Form::getName() const {
 	return name;
 }
 
@@ -59,11 +58,11 @@ bool Form::isSign() const {
 	return sign;
 }
 
-const int Form::getSignGrade() const {
+int Form::getSignGrade() const {
 	return signGrade;
 }
 
-const int Form::getExecGrade() const {
+int Form::getExecGrade() const {
 	return execGrade;
 }
 
@@ -72,12 +71,9 @@ const int Form::getExecGrade() const {
 /*********************************************/
 
 bool Form::beSigned(const Bureaucrat &bureau) {
-	if (bureau.getGrade() <= signGrade) {
+	if (bureau.getGrade() <= signGrade)
 		sign = true;
-		return true;
-	} else {
-		return false;
-	}
+	return sign;
 }
 
 /*********************************************/

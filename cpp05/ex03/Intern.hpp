@@ -21,15 +21,22 @@ private:
 	Form* makeRobotomyRequestForm(const std::string &target);
 	Form* makeShrubberyCreationForm(const std::string &target);
 
+	Intern(const Intern & src);
+	Intern & operator=(const Intern &rhs);
+
 public:
 	//	orthodox canonical form
 	Intern();
 	virtual ~Intern();
-	Intern(const Intern & src);
-	Intern & operator=(const Intern &rhs);
 
 	//	requested function
 	Form* makeForm(const std::string &formName, const std::string &formTarget);
+
+	//	error class
+	class MakeFormError : public std::exception {
+	public:
+		const char *what() const throw();
+	};
 };
 
 

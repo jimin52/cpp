@@ -5,8 +5,6 @@
 #ifndef CPP_BUREAUCRAT_HPP
 #define CPP_BUREAUCRAT_HPP
 
-#include <string>
-#include <ostream>
 #include <iostream>
 
 class Bureaucrat {
@@ -24,7 +22,7 @@ public:
 	Bureaucrat(const std::string &name, int grade);
 
 	//	getter
-	const std::string &getName() const;
+	std::string getName() const;
 	int getGrade() const;
 
 	//	grade increment, decrement

@@ -47,7 +47,7 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : name(name) {
 /******				getter				******/
 /*********************************************/
 
-const std::string &Bureaucrat::getName() const {
+std::string Bureaucrat::getName() const {
 	return name;
 }
 

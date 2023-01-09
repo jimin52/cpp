@@ -18,6 +18,7 @@ Intern::~Intern() {
 
 Intern::Intern(const Intern &src) {
 	std::cout << "Intern copy constructor called" << std::endl;
+	(void) src;
 }
 
 Intern &Intern::operator=(const Intern &rhs) {
@@ -37,7 +38,7 @@ Form* Intern::makeForm(const std::string &formName, const std::string &formTarge
 		}
 	}
 	std::cerr << "Form Name is Wrong!!!" << std::endl;
-	return NULL;
+	throw Intern::MakeFormError();
 }
 
 
@@ -53,4 +54,6 @@ Form *Intern::makeShrubberyCreationForm(const std::string &target) {
 	return new ShrubberyCreationForm(target);
 }
 
-
+const char *Intern::MakeFormError::what() const throw() {
+	return "Form Name is Wrong !!!";
+}
