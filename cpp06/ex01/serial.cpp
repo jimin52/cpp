@@ -2,7 +2,7 @@
 // Created by jimin on 2023/01/10.
 //
 
-#include "Data.hpp"
+#include "serial.hpp"
 
 uintptr_t serialize(Data* ptr) {
 	return reinterpret_cast<uintptr_t>(ptr);

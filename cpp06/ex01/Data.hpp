@@ -15,7 +15,6 @@ private:
 	Data(Data const & src);
 	Data & operator=(Data const & rhs);
 
-
 public:
 
 	Data();

@@ -4,7 +4,6 @@
 
 #include "Data.hpp"
 
-
 Data::Data(): thisIsData(0) {
 	std::cout << "Data constructed" << std::endl;
 }

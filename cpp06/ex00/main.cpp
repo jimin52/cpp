@@ -4,14 +4,16 @@
 
 #include <iostream>
 
+#include "Converter.hpp"
+
 int main( int argc, char* argv[] ) {
    if (argc != 2) {
 	   std::cerr << "invalid input" << std::endl;
 	   return 1;
    }
-   int flag = 0;
-
-   std::string str = argv[1];
+   
+   Converter converter(argv[1]);
+   converter.convertPrint();
 
    return 0;
 }

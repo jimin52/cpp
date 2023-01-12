@@ -5,6 +5,8 @@
 #ifndef CPP_SERIAL_HPP
 #define CPP_SERIAL_HPP
 
+#include "Data.hpp"
+
 uintptr_t serialize(Data* ptr);
 Data* deserialize(uintptr_t raw);
 

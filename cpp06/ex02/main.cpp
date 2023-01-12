@@ -32,30 +32,28 @@ void identify(Base * base) {
 	B* classB;
 	C* classC;
 
-	classA = dynamic_cast<A *>(base);
-	if (classA) {
+	if ((classA = dynamic_cast<A *>(base))) {
 		std::cout << "A in ptr" << std::endl;
 		return;
 	}
 
-	classB = dynamic_cast<B *>(base);
-	if (classB) {
+	if ((classB = dynamic_cast<B *>(base))) {
 		std::cout << "B in ptr" << std::endl;
 		return;
 	}
 
-	classC = dynamic_cast<C *>(base);
-	if (classC) {
+	if ((classC = dynamic_cast<C *>(base))) {
 		std::cout << "C in ptr" << std::endl;
 		return;
 	}
 }
+
 Base * generate(void) {
 
 	int* ptr;
 	Base *returnBase;
 
-	srand(std::time(reinterpret_cast<time_t *>(ptr)));
+	std::srand((std::time(0)));
 	int switchCase = rand() % 3;
 
 	switch(switchCase) {

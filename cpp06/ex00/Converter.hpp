@@ -1,14 +1,13 @@
-
 #ifndef CONVERTER_HPP
 # define CONVERTER_HPP
 
 #include <iostream>
+#include <sstream>
 
-#define CHAR_FLAG 1
-#define INT_FLAG 1 << 2
-#define FLOAT_FLAG 1 << 3
-#define DOUBLE_FLAG 1 << 4
-#define ALL_FLAG 1 << 5
+#define ERR_EMPTY_FLAG		1 
+#define ERR_NOT_NUMBER_FLAG 1 << 1
+#define	NAN_FLAG			1 << 2
+#define	INF_FLAG			1 << 3
 
 class Converter {
 
@@ -16,22 +15,31 @@ private:
 
 	unsigned int	flag;
 	std::string str;
+	double	casted_double;
+
+	std::string charString;
+	std::string intString;
+	std::string floatString;
+	std::string doubleString;
+
 
 	Converter();
 	Converter(const Converter & src);
 	Converter & operator=(Converter const & rhs);
 
-	char	strToChar();
-	int		strToInt();
-	float	strToFloat();
-	double	strToDouble();
+	void	convert();
+	void	convertInit();
+	void	strToChar();
+	void	strToInt();
+	void	strToFloat();
+	void	strToDouble();
 
 public:
 
 	Converter(std::string input);
 	~Converter();
 
-	void convertPrint();
+	void Print();
 };
 
 #endif

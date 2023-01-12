@@ -6,7 +6,7 @@
 #    By: jimin <jimin@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 18:08:03 by jimin             #+#    #+#              #
-#    Updated: 2023/01/11 10:33:58 by jimin            ###   ########.fr        #
+#    Updated: 2023/01/12 20:54:21 by jimin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,11 @@ NAME = main
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-
-
-
 SRCS	= $(wildcard *.cpp)
 OBJS	= $(SRCS:.cpp=.o)
-DEP     = $(patsubst %.c, %.d, $(SRCS))
+DEPS    = $(patsubst %.cpp, %.d, $(SRCS))
 
--include $(DEP)
+-include $(DEPS)
 
 %.o: %.cpp
 	$(CXX) -MMD -MP -c $< -o $@
@@ -32,7 +29,7 @@ $(NAME) : $(OBJS)
 	$(CXX) $(OBJS) -o $(NAME)
 
 clean :
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(DEPS)
 
 fclean : clean
 	$(RM) $(NAME)
